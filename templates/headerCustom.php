@@ -4,6 +4,16 @@
 $theme_dir = get_stylesheet_directory_uri(); //http://preparecal.dev/wp-content/themes/persuader-child
 $header_custom_script_url = $theme_dir . "/assets/js/headerCustom.js";
 
+//DYNAMIC WORDPRESS MENU from "Appearance>Menus>Primary Menu" term_id=307
+/* sample code 
+$menu_obj=wp_get_nav_menu_object( "307" );
+$menu_items = wp_get_nav_menu_items($menu_obj->term_id);
+foreach ( (array) $menu_items as $key => $menu_item ) {
+        echo $title = $menu_item->title . "<br>";
+        echo $url = $menu_item->url . "<br>";
+}
+*/
+
 //LOGO
 $logo_img = $theme_dir . "/assets/img/LOGOS/prepare-socal-logo.png";
 
@@ -77,5 +87,6 @@ $replace=array('{content}');
 $replace_with=array($first_nabvar_block.$second_navbar_block);
 $header = str_replace($replace,$replace_with,$header);
 echo $header;
+
 ?>
 
