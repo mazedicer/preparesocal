@@ -50,7 +50,8 @@ $second_navbar_block = '<div id="second_navbar_container">
                                     <a class="nav-link" href="#">My Neighborhood</a>
                                     <a class="nav-link" href="#">How Can I Help?</a>
                                     <a class="nav-link" href="#" data-toggle="dropdown">
-                                        <i class="material-icons">menu</i>
+                                        <i class="material-icons active-menu">menu</i>
+                                        <i class="material-icons inactive-menu">clear</i>
                                         {dropdown_menu}
                                     </a>
                                 </div>
@@ -58,36 +59,10 @@ $second_navbar_block = '<div id="second_navbar_container">
                         </div>';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //HAMBURGER MENU DROPDOWN
-/*
-in progress with triangle on top aligned right:
-<div class="dropdown-menu">content</div>
-css:
-.dropdown-menu:before {
-    content:"";
-    position: absolute;
-    left: 50%;
-    top: -18px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    border-color: transparent transparent #fff transparent;
-    z-index:9999;
-}
-.dropdown-menu {
-    background: #ccc;
-    border: 8px solid #fffefe;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    float: left;
-    position: absolute;
-    margin: 0;
-    top: 2.8em;
-    width: 200px;
-}
-*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $dropdown_menu =    '<div class="dropdown-menu">
-                        <button class="dropdown-item" type="button">Action</button>
+                        <button class="dropdown-item" type="button">Action <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>
+                            <button id="dropdown-item-0" class="dropdown-item sub-menu-item" type="button">Sub Action</button>
                         <button class="dropdown-item" type="button">Another action</button>
                         <button class="dropdown-item" type="button">Something else here</button>
                     </div>';

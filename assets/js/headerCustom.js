@@ -3,6 +3,8 @@ $(document).ready(function() {
     $(".nav-link:last-child").on("click",function() {
         //show-hide dropdown
         $(".dropdown-menu").toggle();
+        $(".material-icons.active-menu, .material-icons.inactive-menu").toggle();
+        
         //position dropdown
         var parent_width=$(this).width();
         var parent_left=$(this).offset().left;
@@ -16,6 +18,10 @@ $(document).ready(function() {
         //var the_width=$(this).find("div").width();
         //var this_width=$(this).width();
         //var width=parseInt((the_width-this_width)/2);
-        console.log("parent_width="+parent_width+" parent_left="+parent_left+" dropdown_menu_half="+dropdown_menu_half+" dropdown_menu_left="+dropdown_menu_left);
+        //console.log("parent_width="+parent_width+" parent_left="+parent_left+" dropdown_menu_half="+dropdown_menu_half+" dropdown_menu_left="+dropdown_menu_left);
+    });
+    //DROPDOWN SUB-MENU LINKS
+    $(".dropdown-item").on("click",function(e){
+        e.stopPropagation();
     });
 });
