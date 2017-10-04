@@ -89,3 +89,32 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     font-size:35px;
     font-weight: 800;
 }
+/* dropdown-menu */
+.dropdown-menu:before {
+    content:"";
+    position: absolute;
+    left: 45%;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+    z-index:9999;
+}
+.dropdown-menu {
+    position: absolute;
+    top:90px !important;
+    background: #fff;
+    text-align: left !important;
+    border: 1px solid #fff !important;
+    border-radius: 0 !important;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
+    width: 220px;
+}
+.dropdown-menu .dropdown-item {
+    border-bottom: 1px solid #999;
+}
+.dropdown-menu .dropdown-item:last-child {
+    border-bottom: 1px solid #fff;
+}
