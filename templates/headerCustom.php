@@ -134,7 +134,7 @@ $mc_google_material_icons = '<link href="https://fonts.googleapis.com/icon?famil
       rel="stylesheet">';
 
 //EXTERNAL STYLES
-$mc_bootstrap_stylesheet = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">';
+$mc_bootstrap_stylesheet ='';// '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">';
 
 //SCRIPTS
 $mc_script1 = '<script src="{script_url}"></script>';

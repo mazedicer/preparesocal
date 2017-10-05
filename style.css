@@ -57,6 +57,9 @@ header #second_navbar_container {
 }
 header #second_navbar_container .navbar {
     width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 header #second_navbar_container .navbar #nav_container {
     display: flex;
@@ -81,9 +84,6 @@ header #second_navbar_container .navbar #nav_container .nav-link {
     font-size: 22px;
     font-weight: bold !important;
     color: #000;
-}
-header #second_navbar_container .navbar #nav_container .nav-link:last-child {
-    height:48px;
 }
 header #second_navbar_container .navbar #nav_container .nav-link:last-child .material-icons {
     font-size:35px;
@@ -134,4 +134,17 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 .nav-link:last-child .dropdown-menu .dropdown-item:last-child {
     border-bottom: 1px solid #fff;
+}
+/* Hero/above the fold */
+.ahsBuild {
+    height:60vh !important;
+}
+/* block1 */
+.card {
+    background:#6d6e70 !important;
+    border:none;
+}
+.card-img-top {
+    width:130px;
+    height:110px;
 }

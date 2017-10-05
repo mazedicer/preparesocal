@@ -1,5 +1,6 @@
 <div class="ahsBuild"><div id="11343Edit" class="editBlock editHBlock"> <a href="http://preparecal.dev/wp-admin/post.php?post=11343&amp;action=edit"><img data-toggle="tooltip" data-placement="top" title="" src="http://preparecal.dev/wp-content/themes/persuader/assets/img/editblock.png" data-original-title="Edit Hero Block"></a></div><div class="CTAContainer"><div class="ahsContent hrFloat"><div class="CTAGroup" style="display:inline-block; vertical-align:middle;"><h2></h2><p></p></div></div></div></div>
 <div class="ahsMobile bottomEdgeContainer"><div class="CTAContainer"><div class="ahsContent hrFloat"><div class="CTAGroup" style="display:inline-block; vertical-align:middle;"><h2></h2><p></p></div></div></div></div>
+
 <div class="bodyContent">
     <div class="container" style="padding:0 !important;"> 
         <a class="anchorLink"></a>
@@ -7,7 +8,38 @@
             <div class="gcbBG gcbBG13086 ">
                 <div class="container-fluid gcb sidekicks ID13086">
                     <div class="row">
-                        <h1>WORKING</h1>
+                        <div class="col-md-3 mc-sidekick">
+                            <div class="card mb-3">
+                                <img class="card-img-top" src="http://preparecal.dev/wp-content/themes/persuader-child/assets/img/ICONS/earthquakes.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Earthquakes</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mc-sidekick">
+                            <div class="card mb-3">
+                                <img class="card-img-top" src="http://preparecal.dev/wp-content/themes/persuader-child/assets/img/ICONS/wilde-fires.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Wild Fires</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mc-sidekick">
+                            <div class="card mb-3">
+                                <img class="card-img-top" src="http://preparecal.dev/wp-content/themes/persuader-child/assets/img/ICONS/home-fires.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Home Fires</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mc-sidekick">
+                            <div class="card mb-3">
+                                <img class="card-img-top" src="http://preparecal.dev/wp-content/themes/persuader-child/assets/img/ICONS/floods.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Floods</h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
