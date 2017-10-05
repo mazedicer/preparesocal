@@ -143,6 +143,23 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     height:60vh !important;
 }
 /* block1 */
+h2 {
+    text-align: center;
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+}
+h3 {
+    text-align: center;
+    font-weight: bold;
+}
+p {
+    text-align:center;
+}
+p.span {
+    color:cornflowerblue;
+    font-weight:bold;
+}
 .card {
     height:100%;
     background:#6d6e70 !important;
