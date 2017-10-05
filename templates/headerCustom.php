@@ -1,8 +1,8 @@
 <?php
 //Header Custom 
 //TOOLS
-$theme_dir = get_stylesheet_directory_uri(); //http://preparecal.dev/wp-content/themes/persuader-child
-$header_custom_script_url = $theme_dir . "/assets/js/headerCustom.js";
+$mc_theme_dir = get_stylesheet_directory_uri(); //http://preparecal.dev/wp-content/themes/persuader-child
+$mc_header_custom_script_url = $mc_theme_dir . "/assets/js/headerCustom.js";
 
 //DYNAMIC WORDPRESS MENU from "Appearance>Menus>Primary Menu" term_id=307
 /* 
@@ -49,55 +49,100 @@ menu object json_encode()d
    "xfn":""
 }
 sample code:
-$menu_obj=wp_get_nav_menu_object( "307" );
-$menu_items = wp_get_nav_menu_items($menu_obj->term_id);
-foreach ( (array) $menu_items as $key => $menu_item ) {
+$mc_menu_obj=wp_get_nav_menu_object( "307" );
+$mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
+foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
         $title = $menu_item->title;
         $url = $menu_item->url;
         $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
 }
 */
-$regular_link = '<button class="dropdown-item" type="button" onclick="goTo(\'{url}\')>{title}</button>';
-$parent_link = '<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
-$child_link = '<button class="dropdown-item sub-menu-item _{parent_id}" type="button" onclick="goTo(\'{url}\')">{title}</button>';
-$child_links = array();
-$menu_obj=wp_get_nav_menu_object( "307" );
-$menu_items = wp_get_nav_menu_items($menu_obj->term_id);
-
+$mc_regular_link='<button class="dropdown-item" type="button" onclick="goTo(\'{url}\')">{title}</button>';
+$mc_parent_link='<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
+$mc_child_link='<button class="dropdown-item sub-menu-item _{parent_id}" type="button" onclick="goTo(\'{url}\')">{title}</button>';
+$mc_child_links=array();
+$mc_dropdown_menu_content="";
+$mc_menu_obj=wp_get_nav_menu_object( "307" );
+$mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
+foreach ( (array) $mc_menu_items as $key => $menu_item ) {
+    $_child_links=array();
+    $id = $menu_item->ID;
+    $title = $menu_item->title;
+    $url = $menu_item->url;
+    $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
+    if(in_array($id,$mc_child_links)){
+        //skip. child links will be constructed below 
+        continue;
+    }
+    $children_links=returnCHildLinks($menu_item);
+    if(is_array($children_links)){
+        foreach($children_links as $chl){
+            if($chl != null){
+                array_push($_child_links,(string)$chl);
+                array_push($mc_child_links,(string)$chl);
+            }
+        }
+        //parent link because it has child links. Add to dropdown_menu_content 
+        $mc_dropdown_menu_content.=str_replace(["{id}","{title}"],[$id,$title],$mc_parent_link);
+        //add child links to dropdown_menu_content
+        foreach($_child_links as $_cl){
+            $_cl_item=getLinkItem($_cl);
+            $mc_dropdown_menu_content.=str_replace(["{parent_id}","{url}","{title}"],[$id,$_cl_item->url,$_cl_item->title],$mc_child_link);
+        }
+    }else{
+        //regular link because it has no children links. Add to dropdown_menu_content
+        $mc_dropdown_menu_content.=str_replace(["{url}","{title}"],[$url,$title],$mc_regular_link);
+    }
+}
+function getLinkItem($_child_link){
+    $mc_menu_obj=wp_get_nav_menu_object( "307" );
+    $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
+    foreach ( (array) $mc_menu_items as $key => $menu_item ) {
+        $id = $menu_item->ID;
+        if($id==$_child_link){
+            return $menu_item;
+        }
+    }
+    return null;
+}
 function returnCHildLinks($parent_menu_item){
     $main_link=$parent_menu_item->ID;
-    $child_links=array();
-    //iterate over $menu_items and check for children
-    foreach ( (array) $menu_items as $key => $menu_item ) {
+    $_child_links=array();
+    //iterate over $mc_menu_items and check for children
+    $mc_menu_obj=wp_get_nav_menu_object( "307" );
+    $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
+    foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
         $title = $menu_item->title;
         $url = $menu_item->url;
         $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
         if($main_link==$parent){
-            array_push($child_links,$id);
+            array_push($_child_links,$id);
         }
     }
-    return $child_links;
+    if(count($_child_links)>0){
+        return $_child_links;
+    }
+    return null;
 }
-
 //LOGO
-$logo_img = $theme_dir . "/assets/img/LOGOS/prepare-socal-logo.png";
+$mc_logo_img = $mc_theme_dir . "/assets/img/LOGOS/prepare-socal-logo.png";
 
 //EXTERNAL FONTS
-$google_material_icons = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+$mc_google_material_icons = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">';
 
 //EXTERNAL STYLES
-$bootstrap_stylesheet = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">';
+$mc_bootstrap_stylesheet = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">';
 
 //SCRIPTS
-$script1 = '<script src="{script_url}"></script>';
+$mc_script1 = '<script src="{script_url}"></script>';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //FIRST NAVBAR BLOCK
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$first_nabvar_block = '<div id="first_navbar_container">
+$first_nabvar_block_template = '<div id="first_navbar_container">
                             <div id="nav_container">
                                 <ul class="nav justify-content-end">
                                     <li class="nav-item">
@@ -115,11 +160,11 @@ $first_nabvar_block = '<div id="first_navbar_container">
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //SECOND NAVBAR BLOCK
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$second_navbar_block = '<div id="second_navbar_container">
+$second_navbar_block_template = '<div id="second_navbar_container">
                             <nav class="navbar">
                                 <div id="navbar_logo_div">
                                     <a href="#">
-                                        <img src="{logout_url}" alt="Prepare Socal Logo">
+                                        <img src="{logo_url}" alt="Prepare Socal Logo">
                                     </a>
                                 </div>
                                 <div id="nav_container">
@@ -136,26 +181,27 @@ $second_navbar_block = '<div id="second_navbar_container">
                         </div>';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //HAMBURGER MENU DROPDOWN
+       /*<div class="dropdown-menu">
+       <button id="_307" class="dropdown-item has-child-links" type="button">Action <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>
+            <button class="dropdown-item sub-menu-item _307" type="button">Sub Action</button>
+            <button class="dropdown-item sub-menu-item _307" type="button">Sub Action</button>
+        <button class="dropdown-item" type="button">Another action</button>
+        <button id="_308" class="dropdown-item has-child-links" type="button">Something else here <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>
+            <button class="dropdown-item sub-menu-item _308" type="button">Sub Action</button>
+            <button class="dropdown-item sub-menu-item _308" type="button">Sub Action</button>
+            </div>
+    */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$dropdown_menu =    '<div class="dropdown-menu">
-                        <button id="_307" class="dropdown-item has-child-links" type="button">Action <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>
-                            <button class="dropdown-item sub-menu-item _307" type="button">Sub Action</button>
-                            <button class="dropdown-item sub-menu-item _307" type="button">Sub Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button id="_308" class="dropdown-item has-child-links" type="button">Something else here <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>
-                            <button class="dropdown-item sub-menu-item _308" type="button">Sub Action</button>
-                            <button class="dropdown-item sub-menu-item _308" type="button">Sub Action</button>
-                    </div>';
+$mc_dropdown_menu_template='<div class="dropdown-menu">{dropdown_menu_content}</div>';
 
 /* PUT IT ALL TOGETHER */
-$scripts_in = str_replace("{script_url}",$header_custom_script_url,$script1);
-$header = $google_material_icons.$bootstrap_stylesheet.$scripts_in.'<header>{content}</header>';
-$second_navbar_replace=array("{logout_url}","{dropdown_menu}");
-$second_navbar_replace_with=array($logo_img,$dropdown_menu);
-$second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block);
-$replace=array('{content}');
-$replace_with=array($first_nabvar_block.$second_navbar_block);
-$header = str_replace($replace,$replace_with,$header);
-echo $header;
+$mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
+$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
+$mc_header_template=$mc_google_material_icons.$mc_bootstrap_stylesheet.$mc_scripts_in.'<header>{content}</header>';
+$second_navbar_replace=array("{logo_url}","{dropdown_menu}");
+$second_navbar_replace_with=array($mc_logo_img,$mc_dropdown_menu);
+$second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block_template);
+$mc_header = str_replace("{content}",$first_nabvar_block_template.$second_navbar_block,$mc_header_template);
+echo $mc_header;
 ?>
 
