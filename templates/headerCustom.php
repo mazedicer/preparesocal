@@ -58,6 +58,28 @@ foreach ( (array) $menu_items as $key => $menu_item ) {
         $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
 }
 */
+$regular_link = '<button class="dropdown-item" type="button" onclick="goTo(\'{url}\')>{title}</button>';
+$parent_link = '<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
+$child_link = '<button class="dropdown-item sub-menu-item _{parent_id}" type="button" onclick="goTo(\'{url}\')">{title}</button>';
+$child_links = array();
+$menu_obj=wp_get_nav_menu_object( "307" );
+$menu_items = wp_get_nav_menu_items($menu_obj->term_id);
+
+function returnCHildLinks($parent_menu_item){
+    $main_link=$parent_menu_item->ID;
+    $child_links=array();
+    //iterate over $menu_items and check for children
+    foreach ( (array) $menu_items as $key => $menu_item ) {
+        $id = $menu_item->ID;
+        $title = $menu_item->title;
+        $url = $menu_item->url;
+        $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
+        if($main_link==$parent){
+            array_push($child_links,$id);
+        }
+    }
+    return $child_links;
+}
 
 //LOGO
 $logo_img = $theme_dir . "/assets/img/LOGOS/prepare-socal-logo.png";
