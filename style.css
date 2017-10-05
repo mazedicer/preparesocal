@@ -46,6 +46,9 @@ header #first_navbar_container #nav_container {
     background:#f4f4f4;
     border-radius: 0px 0px 0px 20px;
 }
+header #first_navbar_container #nav_container > ul {
+    display:flex;
+}
 /* second navigation menu with a 400px gap to the right */
 header #second_navbar_container {
     height:140px;
@@ -121,7 +124,7 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 .nav-link:last-child .dropdown-menu {
     position: absolute;
-    top:90px !important;
+    top:70px !important;
     background: #fff;
     text-align: left !important;
     border: 1px solid #fff !important;
@@ -141,10 +144,24 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 /* block1 */
 .card {
+    height:100%;
     background:#6d6e70 !important;
     border:none;
+    text-align:center;
+    border-radius:0;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.card:hover {
+    background:red !important;
+    cursor:pointer;
 }
 .card-img-top {
-    width:130px;
-    height:110px;
+    width:70px;
+    height:70px;
+    margin-bottom:15px;
+}
+.card .card-body .card-title {
+    color:#fff;
+    font-weight: bold;
 }

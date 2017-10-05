@@ -2,7 +2,7 @@
 //Header Custom 
 //TOOLS
 $mc_theme_dir = get_stylesheet_directory_uri(); //http://preparecal.dev/wp-content/themes/persuader-child
-$mc_header_custom_script_url = $mc_theme_dir . "/assets/js/headerCustom.js";
+//$mc_header_custom_script_url = $mc_theme_dir . "/assets/js/headerCustom.js";
 
 //DYNAMIC WORDPRESS MENU from "Appearance>Menus>Primary Menu" term_id=307
 /* 
@@ -137,7 +137,7 @@ $mc_google_material_icons = '<link href="https://fonts.googleapis.com/icon?famil
 $mc_bootstrap_stylesheet ='';// '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">';
 
 //SCRIPTS
-$mc_script1 = '<script src="{script_url}"></script>';
+//$mc_script1 = '<script src="{script_url}"></script>';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //FIRST NAVBAR BLOCK
@@ -196,8 +196,8 @@ $mc_dropdown_menu_template='<div class="dropdown-menu">{dropdown_menu_content}</
 
 /* PUT IT ALL TOGETHER */
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
-$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
-$mc_header_template=$mc_google_material_icons.$mc_bootstrap_stylesheet.$mc_scripts_in.'<header>{content}</header>';
+//$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
+$mc_header_template=$mc_google_material_icons.$mc_bootstrap_stylesheet.'<header>{content}</header>';
 $second_navbar_replace=array("{logo_url}","{dropdown_menu}");
 $second_navbar_replace_with=array($mc_logo_img,$mc_dropdown_menu);
 $second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block_template);
