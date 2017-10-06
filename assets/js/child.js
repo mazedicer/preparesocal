@@ -39,4 +39,6 @@ $(document).ready(function() {
             $("."+id).toggle();
         });
     }
+    //respond_container match size
+    $("#respond_container").height($("#before_respond_container").height());
 });

@@ -372,3 +372,42 @@ p.affix-plus:before {
     margin-bottom: 15px;
     margin-top: 15px;
 }
+.hr-effect-left {
+    height: 4px;
+    background: #ccc;
+    box-shadow: inset -250px 0px 100px -15px #fff;
+}
+.hr-effect-right {
+    height: 4px;
+    background: #ccc;
+    box-shadow: inset 250px 0px 100px -15px #fff;
+}
+.hr-h3-effect {
+    position:relative;
+    top:-30px;
+}
+.padtop-60 {
+    padding-top:60px;
+}
+.d-flex {
+    display:flex;
+}
+.flex-row {
+    justify-content: flex-start;
+}
+.flex-row-reverse {
+    justify-content:flex-end;
+}
+.justify-content-center {
+    justify-content:center;
+}
+.h1-watch img {
+    height: 70px;
+    vertical-align: middle;
+}
+.muted {
+    opacity:0.6;
+}
+#respond_container {
+    align-items:center;
+}
