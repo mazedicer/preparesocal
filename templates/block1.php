@@ -11,7 +11,7 @@
                         <h2>Before It's <i>Too</i> Late</h2>
                         <div class="col-md-3 mc-sidekick">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/earthquakes.png" alt="Card image cap">
+                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/earthquakes.png" alt="Earthquakes">
                                 <div class="card-body">
                                     <h4 class="card-title">Earthquakes</h4>
                                 </div>
@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-3 mc-sidekick">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/wilde-fires.png" alt="Card image cap">
+                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/wilde-fires.png" alt="Wild Fires">
                                 <div class="card-body">
                                     <h4 class="card-title">Wild Fires</h4>
                                 </div>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-3 mc-sidekick">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/home-fires.png" alt="Card image cap">
+                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/home-fires.png" alt="Home Fires">
                                 <div class="card-body">
                                     <h4 class="card-title">Home Fires</h4>
                                 </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-3 mc-sidekick">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/floods.png" alt="Card image cap">
+                                <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/ICONS/floods.png" alt="Floods">
                                 <div class="card-body">
                                     <h4 class="card-title">Floods</h4>
                                 </div>
