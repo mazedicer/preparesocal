@@ -8,6 +8,7 @@
             <div class="gcbBG gcbBG13086 ">
                 <div class="container-fluid gcb sidekicks ID13086">
                     <div class="row">
+                        <!-- block1 starts here -->
                         <h2>Before It's <i>Too</i> Late</h2>
                         <div class="col-md-3 mc-sidekick">
                             <div class="card mb-3">

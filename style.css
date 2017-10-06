@@ -142,6 +142,10 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 .ahsBuild {
     height:60vh !important;
 }
+/* overlay buttons */
+.btn-overlay {
+    margin-left:0px !important;
+}
 /* block1 */
 h2 {
     text-align: center;
@@ -227,7 +231,7 @@ h4 {
     background: #fff !important;
     border: none;
     border-radius: 0;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .card-text-block3 {
     width:65%;
@@ -247,4 +251,21 @@ h4 {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
+}
+/* overlays */
+.no-gutter-right {
+    padding-right:0px;
+}
+.no-gutter-left {
+    padding-left:0px;
+}
+/* block4 */
+.card-block4 {
+    height: 100%;
+    background: #007caf !important;
+    border: none;
+    text-align: center;
+    border-radius: 0;
+    padding-top: 100px;
+    padding-bottom: 80px;
 }

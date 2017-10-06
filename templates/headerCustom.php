@@ -205,9 +205,11 @@ $mc_header = str_replace("{content}",$first_nabvar_block_template.$second_navbar
 $mc_block1=file_get_contents($mc_theme_dir."/templates/block1.php");
 $mc_block2=file_get_contents($mc_theme_dir."/templates/block2.php");
 $mc_block3=file_get_contents($mc_theme_dir."/templates/block3.php");
+$mc_block4=file_get_contents($mc_theme_dir."/templates/block4.php");
 echo $mc_header;
 echo $mc_block1;
 echo $mc_block2;
 echo $mc_block3;
+echo $mc_block4;
 ?>
 

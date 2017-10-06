@@ -2,12 +2,8 @@
     <a class="anchorLink" name="block2"></a>
     <div class="gcbBG gcbBG13098 ">
         <div class="container-fluid gcb block2 ID13098">
-            <div id="13098Edit" class="editBlock"> 
-                <a href="http://preparecal.dev/wp-admin/post.php?post=13098&amp;action=edit">
-                    <img data-toggle="tooltip" data-placement="top" title="" src="http://preparecal.dev/wp-content/themes/persuader/assets/img/editblock.png" data-original-title="Edit Default Block">
-                </a>
-            </div> 
             <div class="row">
+                <!-- block2 starts here -->
                 <div class="col-md-4 mc-statcard">
                     <div class="card-stats mb-3">
                         <img class="card-img-top-stats" src="wp-content/themes/persuader-child/assets/img/ICONS/7-people-die-icon.png" alt="7 people die from a home fire every day.">
