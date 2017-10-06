@@ -207,11 +207,15 @@ $mc_block2=file_get_contents($mc_theme_dir."/templates/block2.php");
 $mc_block3=file_get_contents($mc_theme_dir."/templates/block3.php");
 $mc_block4=file_get_contents($mc_theme_dir."/templates/block4.php");
 $mc_block5=file_get_contents($mc_theme_dir."/templates/block5.php");
+$mc_block6=file_get_contents($mc_theme_dir."/templates/block6.php");
+$mc_block7=file_get_contents($mc_theme_dir."/templates/block7.php");
 echo $mc_header;
 echo $mc_block1;
 echo $mc_block2;
 echo $mc_block3;
 echo $mc_block4;
 echo $mc_block5;
+echo $mc_block6;
+echo $mc_block7;
 ?>
 

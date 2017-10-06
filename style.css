@@ -176,6 +176,9 @@ p.span {
     padding-top:40px;
     padding-bottom:20px;
 }
+.card-img {
+    border-radius:0px;
+}
 .card:hover {
     background:red !important;
     cursor:pointer;
@@ -264,13 +267,20 @@ h4 {
 }
 /* block4 */
 .card-block4 {
-    height: 100%;
+    max-height:450px;
+    min-height:450px;
     background: #007caf !important;
     border: none;
     text-align: center;
     border-radius: 0;
     padding-top: 100px;
     padding-bottom: 80px;
+}
+p.affix-plus:before {
+    content: "+";
+    font-size: 60px;
+    vertical-align: -35%;
+    font-weight: bold;
 }
 /* block5 */
 .card-block5 {
@@ -285,4 +295,80 @@ h4 {
 .side-borders {
     border-left: 2px solid #ccc;
     border-right: 2px solid #ccc;
+}
+/* block6 */
+.card-block6 {
+    min-height:600px;
+    position: relative;
+    display: block;
+    background: #fff !important;
+    border: none;
+    border-radius: 0;
+    padding-bottom: 10px;
+}
+.card-block6 img {
+    min-height:600px;
+}
+.card-block6 .card-img-overlay {
+    text-align:center;
+    bottom:5%;
+    left:0%;
+}
+.card-block6 .card-img-overlay img {
+    min-height:0px;
+    margin-bottom:10%;
+}
+.card-block6 .card-img-overlay p {
+    text-align: left;
+    margin-left: 17%;
+    margin-right: 0;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+.half-gutter-left {
+    padding-left:7.5px;
+}
+.half-gutter-right {
+    padding-right:7.5px;
+}
+/* block7 */
+.container-block7 .block7-content-1-container {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    height: 300px;
+}
+.container-block7 .block7-content-1-container .block7-content-1 {
+    width: 70%;
+    display: block;
+    position: relative;
+    margin-right:50px;
+}
+.container-block7 .block7-content-1-container .block7-content-1 p, .container-block7 .block7-content-1-container .block7-content-1 h3 {
+    text-align:left;
+}
+.card-block7 {
+    height: 100%;
+    background: #fff !important;
+    border: none;
+    text-align: center;
+    border-radius: 0;
+    padding-top: 20px;
+    box-shadow: 0px 3px 10px 3px #ccc;
+    width: 70%;
+    margin-left:50px;
+}
+.card-block7 .card-footer {
+    border-top:0px;
+    border-radius:0px;
+    background-color: #666;
+}
+.card-block7 .card-footer .card-text {
+    margin-bottom:0px;
+}
+.card-block7 .card-img-top {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
