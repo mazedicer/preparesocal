@@ -401,6 +401,9 @@ p.affix-plus:before {
 .justify-content-center {
     justify-content:center;
 }
+.justify-content-right {
+    justify-content:flex-end;
+}
 .h1-watch img {
     height: 70px;
     vertical-align: middle;
@@ -428,12 +431,30 @@ p.affix-plus:before {
     font-size:16px;
 
 }
+#footer-content-left {
+    height: 200px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+#footer-content-right {
+    height: 200px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.footer-left-content h3 {
+    text-align:left;
+}
 .form-row {
     display: flex;
     flex-wrap: wrap;
 }
 .form-row button {
     font-size: 16px !important;
+    width:200px;
+}
+.form-row input {
+    width:300px;
 }
 .align-items-center {
     align-items: center !important;
