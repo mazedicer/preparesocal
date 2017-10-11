@@ -41,4 +41,14 @@ $(document).ready(function() {
     }
     //respond_container match size
     $("#respond_container").height($("#before_respond_container").height());
+    //responsive js min-width 541
+    if($(window).width()<541){
+        $(".no-gutter-left").css("padding-right",0);
+        $(".no-gutter-right").css("padding-left",0);
+        $(".side-borders").css({borderLeft:"none",borderRight:"none"});
+        $(".btn-danger:eq(4)").css({position:"relative",left:"-5%"});
+        $(".card-block5:eq(0)").css({position:"relative",top:"-65px"});
+        $(".flex-row-reverse").css("justify-content","center");
+        $(".flex-row").css("justify-content","center");
+    }
 });

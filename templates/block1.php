@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <h3>Why Should I Prepare?</h3>
-                        <p>If you can plan for a vacation, why not plan for your safety?<br>
+                        <p class="row-p">If you can plan for a vacation, why not plan for your safety?<br>
                         Each year, the Red Cross responds to nearly 64,000 disasters,<br>
                         the vast majority for which are <span>home fires</span>.</p>
                     </div>

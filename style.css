@@ -12,8 +12,25 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Child theme Css Here */
 /* first navigation bar justified to the right */
+h1, h2 {
+    font-size: 38px;
+    line-height: 39px;
+}
+.ahsBuild {
+    background-position-x: 70% !important;
+}
+.ahsMobile {
+    display: none !important;
+}
 button:focus {
     outline:none;
+}
+body > div.bodyContainer > div.bodyContent > div > div > div > div > div.row {
+    margin-top:-100px;
+}
+.col-sm-6 {
+    width:50%;
+    float:left;
 }
 header {
     box-shadow: 0px 1px 10px 1px #999;
@@ -31,7 +48,7 @@ header #first_navbar_container #nav_container .nav .nav-item:last-child {
     padding-right:20px;
 }
 header #first_navbar_container {
-    display:flex;
+    display:none;
     justify-content: flex-end;
     position: absolute;
     width:100%;
@@ -54,32 +71,27 @@ header #first_navbar_container #nav_container > ul {
 }
 /* second navigation menu with a 400px gap to the right */
 header #second_navbar_container {
-    height:140px;
-    width:80%;
+    width:100%;
     display:flex;
     align-items: center;
-    padding-top: 25px;
+    padding-top: 0px;
     background:#fff;
 }
 header #second_navbar_container .navbar {
     width:100%;
     display:flex;
-    justify-content: center;
     align-items:center;
 }
 header #second_navbar_container .navbar #nav_container {
     display: flex;
     justify-content: space-evenly;
     align-items:center;
-    width: 70%;
 }
 header #second_navbar_container .navbar #navbar_logo_div {
     display: flex;
-    width: 30%;
-    justify-content: center;
 }
 header #second_navbar_container .navbar #navbar_logo_div a {
-    text-align:center;
+    text-align:left;
 }
 header #second_navbar_container .navbar #navbar_logo_div a img {
     max-width: 70%;
@@ -90,6 +102,10 @@ header #second_navbar_container .navbar #nav_container .nav-link {
     font-size: 22px;
     font-weight: bold !important;
     color: #000;
+    display:none;
+}
+header #second_navbar_container .navbar #nav_container .nav-link:last-child {
+    display:block;
 }
 header #second_navbar_container .navbar #nav_container .nav-link:last-child .material-icons {
     font-size:35px;
@@ -150,6 +166,16 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     margin-left:0px !important;
 }
 /* block1 */
+.mc-sidekick {
+    padding-left:90px;
+    padding-right:90px;
+}
+.mc-sidekick:last-of-type {
+    margin-bottom:60px;
+}
+.mb-3 {
+        margin-bottom: 20px;
+    }
 h2 {
     text-align: center;
     color: #fff;
@@ -163,7 +189,13 @@ h3 {
 p {
     text-align:center;
 }
-p.span {
+p.row-p {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    width: 70%;
+}
+p span {
     color:cornflowerblue;
     font-weight:bold;
 }
@@ -215,15 +247,15 @@ h4 {
     border:none;
     text-align:center;
     border-radius:0;
-    padding-top:20px;
-    padding-bottom:20px;    
+    padding-top:40px;
+    padding-bottom:350px;    
     box-shadow: 0px 3px 10px 3px #ccc;
 }
 .card-img-top-stats {
     max-height:120px;
     margin-bottom:30px;
 }
-.card-text {
+p.card-text {
     margin-bottom: 0;
     margin-left: 10%;
     margin-right: 10%;
@@ -233,11 +265,29 @@ h4 {
 .card-block3 {
     position:relative;
     display:block;
-    height: 100%;
+    height: 400px;
     background: #fff !important;
     border: none;
     border-radius: 0;
     padding-bottom: 10px;
+}
+.card-block3 img.card-block3-img1 {
+    left:-900px;
+    position:relative;
+    height:98%;
+    max-width:999%;
+}
+.card-block3 img.card-block3-img2 {
+    max-width: 999%;
+    position: relative;
+    left: -200px;
+    height: 98%;
+}
+.card-block3 img.card-block3-img3 {
+    max-width: 999%;
+    position: relative;
+    left: -100px;
+    height: 98%;
 }
 .card-text-block3 {
     width:65%;
@@ -338,6 +388,10 @@ p.affix-plus:before {
     align-items: center;
     height: 300px;
 }
+.container-block7 .block7-content-2-container {
+    justify-content: center;
+    display: flex;
+}
 .container-block7 .block7-content-1-container .block7-content-1 {
     width: 70%;
     display: block;
@@ -356,7 +410,7 @@ p.affix-plus:before {
     padding-top: 20px;
     box-shadow: 0px 3px 10px 3px #ccc;
     width: 70%;
-    margin-left:50px;
+    margin-left:0px;
 }
 .card-block7 .card-footer {
     border-top:0px;
@@ -463,4 +517,48 @@ p.affix-plus:before {
     flex: 0 0 auto;
     width: auto;
     max-width: none;
+}
+@media(min-width:541px){
+    .mb-3 {
+        margin-bottom: 3rem;
+    }
+    header #first_navbar_container {
+        display:flex;
+    }
+    header #second_navbar_container {
+        padding-top: 25px;
+        height:140px;
+        width:80%;
+    }
+    header #second_navbar_container .navbar {
+        justify-content: center;
+    }
+    header #second_navbar_container .navbar #nav_container {
+        width: 70%;
+    }
+    header #second_navbar_container .navbar #navbar_logo_div {
+        width: 30%;
+        justify-content: center;
+    }
+    header #second_navbar_container .navbar #navbar_logo_div a {
+        text-align:center;
+    }
+    header #second_navbar_container .navbar #nav_container .nav-link {
+        display:block;
+    }
+    .card-stats {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .card-block3 {
+        height: 100%;
+    }
+    .card-block3 img {
+        left:0px;
+        position:relative;
+        height:100%;
+    }
+    .card-block7 {
+        margin-left:50px;
+    }
 }

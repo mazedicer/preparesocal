@@ -11,7 +11,7 @@
                             <p>Thank you to our sponsors and supporters for your valued partnership to help save lives and make Souther California more resilient.</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 block7-content-2-container">
                         <div class="card-block7">
                             <img class="card-img-top" src="wp-content/themes/persuader-child/assets/img/LOGOS/edison-logo.png" alt="EDISON INTERNATIONAL">
                             <div class="card-footer text-white">
@@ -28,31 +28,31 @@
                 </div>
                 <div class="row padtop-60">
                     <!-- sponsor logos -->
-                    <div class="col-md-3">
+                    <div class="col-sm-6 col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/walmart-logo.png" alt="Walmart Foundation">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-6  col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/kiddie-logo.png" alt="Kidde">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-6  col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/dogeared-logo-2014.png" alt="DOGEARED">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-6  col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/mercy-logo.png" alt="MERCY WORLDWIDE">
                     </div>
                 </div>
                 <div class="row">
                     <!-- sponsor logos -->
-                    <div class="col-md-3">
+                    <div class="col-sm-6 col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/farmers-insurance-logo.png" alt="Farmers Insurance">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-6 col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/cea-logo.png" alt="CEA California Earthquake Authority">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-6 col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/la-fire-logo.png" alt="Los Angeles CA Fire Department">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-6 col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/abc7-logo.png" alt="ABC 7">
                     </div>
                 </div>
