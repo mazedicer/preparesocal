@@ -99,7 +99,7 @@ header #second_navbar_container .navbar #navbar_logo_div a img {
 }
 header #second_navbar_container .navbar #nav_container .nav-link {
     font-family: Arial,Helvetica,sans-serif !important;
-    font-size: 22px;
+    font-size: 15px;
     font-weight: bold !important;
     color: #000;
     display:none;
@@ -174,8 +174,8 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     margin-bottom:60px;
 }
 .mb-3 {
-        margin-bottom: 20px;
-    }
+    margin-bottom: 20px;
+}
 h2 {
     text-align: center;
     color: #fff;
@@ -265,29 +265,25 @@ p.card-text {
 .card-block3 {
     position:relative;
     display:block;
-    height: 400px;
     background: #fff !important;
     border: none;
     border-radius: 0;
     padding-bottom: 10px;
 }
 .card-block3 img.card-block3-img1 {
-    left:-900px;
+    left:-1100px;
     position:relative;
-    height:98%;
     max-width:999%;
 }
 .card-block3 img.card-block3-img2 {
     max-width: 999%;
     position: relative;
-    left: -200px;
-    height: 98%;
+    left: -300px;
 }
 .card-block3 img.card-block3-img3 {
     max-width: 999%;
     position: relative;
-    left: -100px;
-    height: 98%;
+    left: -180px;
 }
 .card-text-block3 {
     width:65%;
@@ -430,11 +426,23 @@ p.affix-plus:before {
     height: 4px;
     background: #ccc;
     box-shadow: inset -250px 0px 100px -15px #fff;
+    display:none;
 }
 .hr-effect-right {
     height: 4px;
     background: #ccc;
     box-shadow: inset 250px 0px 100px -15px #fff;
+    display:none;
+}
+.hr-effect-both {
+    height: 4px;
+    background: #ccc;
+    display:block;
+    background: #ccc; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#fff 40%, #ccc); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#fff 40%, #ccc); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#fff 40%, #ccc); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#fff 40%, #ccc); /* Standard syntax */
 }
 .hr-h3-effect {
     position:relative;
@@ -505,7 +513,6 @@ p.affix-plus:before {
     text-align:center;
 }
 .form-row {
-    width:300px;
     display:block;
     text-align:center;
 }
@@ -525,6 +532,10 @@ p.affix-plus:before {
     max-width: none;
 }
 @media(min-width:541px){
+    .col-sm-6 {
+        width:25%;
+        float:left;
+    }
     .mb-3 {
         margin-bottom: 3rem;
     }
@@ -552,20 +563,44 @@ p.affix-plus:before {
     header #second_navbar_container .navbar #nav_container .nav-link {
         display:block;
     }
+    .mc-sidekick {
+        padding-left:15px;
+        padding-right:15px;
+    }
+    p.row-p {
+        text-align:center;
+    }
     .card-stats {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-    .card-block3 {
-        height: 100%;
-    }
     .card-block3 img {
         left:0px;
         position:relative;
-        height:100%;
+    }
+    .card-block3 img.card-block3-img1 {
+        left:0px;
+        max-width:112%;
+    }
+    .card-block3 img.card-block3-img2 {
+        left:0px;
+        max-width:100%;
+    }
+    .card-block3 img.card-block3-img3 {
+        left:0px;
+        max-width:100%;
     }
     .card-block7 {
         margin-left:50px;
+    }
+    #respond_container {
+        margin-top:0px;
+    }
+    #footerCustom {
+        height:100%;
+    }
+    #footerCustom div.container {
+        height:100%;
     }
     #footer-content-left {
         height: 200px;
@@ -585,8 +620,29 @@ p.affix-plus:before {
         display: flex;
         flex-wrap: wrap;
     }
+    .form-row input {
+        width: 300px;
+        font-size: 32px;
+    }
     .form-row button {
         font-size: 16px;
         width:200px;
+    }
+    .hr-effect-left, .hr-effect-right {
+        display:block;
+    }
+    .hr-effect-both {
+        display:none;
+    }
+}
+@media(min-width:721px){
+    
+}
+@media(min-width:961px){
+    
+}
+@media(min-width:1141px){
+    header #second_navbar_container .navbar #nav_container .nav-link {
+        font-size: 22px;
     }
 }

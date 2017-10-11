@@ -25,6 +25,7 @@
                     <div class="col-md-6 hr-effect-left"></div>
                     <div class="col-md-6 hr-effect-right"></div>
                     <h3 class="hr-h3-effect">More of Our Sponsors</h3>
+                    <div class="col-md-6 hr-effect-both"></div>
                 </div>
                 <div class="row padtop-60">
                     <!-- sponsor logos -->
