@@ -70,5 +70,12 @@ $(document).ready(function() {
         $(".flex-row-reverse").css("justify-content","center");
         $(".flex-row").css("justify-content","center");
     }
-    
+    //shelter-map fixes
+    var pathname = window.location.pathname;
+    if(pathname.indexOf('shelter-map')>0){
+        var shelter_header=$('div.header-overlay');
+        var shelter_hero=$('.ahsBuild');
+        var dim=(shelter_hero.height()/2)+(shelter_header.height());
+        shelter_header.offset({top:dim});
+    }
 });

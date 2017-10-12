@@ -16,9 +16,6 @@ h1, h2 {
     font-size: 38px;
     line-height: 39px;
 }
-.ahsBuild {
-    background-position-x: 70% !important;
-}
 .ahsMobile {
     display: none !important;
 }
@@ -159,7 +156,7 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 /* Hero/above the fold */
 .ahsBuild {
-    height:60vh !important;
+    height:60vh;
 }
 /* overlay buttons */
 .btn-overlay {
@@ -530,6 +527,33 @@ p.affix-plus:before {
     flex: 0 0 auto;
     width: auto;
     max-width: none;
+}
+/* shelter-map*/
+.header-overlay {
+    position:relative;
+    left:100px;
+    color:#fff;
+}
+.header-overlay .shelter-header {
+    font-size:50px;
+    font-weight:600;
+    margin-bottom:0.8rem;
+    margin-left:0px;
+    max-width:400px;
+}
+.header-overlay .shelter-header img {
+    height:50px;
+}
+.header-overlay p {
+    text-align:left;
+    max-width:600px;
+    margin-left:0px;
+}
+p span.bold {
+    color: #000;
+}
+h3.find-shelter {
+    margin-top:-50px;
 }
 @media(min-width:541px){
     .col-sm-6 {

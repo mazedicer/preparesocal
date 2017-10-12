@@ -203,21 +203,19 @@ $second_navbar_replace_with=array($mc_logo_img,$mc_dropdown_menu);
 $second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block_template);
 $mc_header = str_replace("{content}",$first_nabvar_block_template.$second_navbar_block,$mc_header_template);
 echo $mc_header;
-/* quick edit blocks 
-$mc_block1=file_get_contents($mc_theme_dir."/templates/block1.php");
-$mc_block2=file_get_contents($mc_theme_dir."/templates/block2.php");
-$mc_block3=file_get_contents($mc_theme_dir."/templates/block3.php");
-$mc_block4=file_get_contents($mc_theme_dir."/templates/block4.php");
-$mc_block5=file_get_contents($mc_theme_dir."/templates/block5.php");
-$mc_block6=file_get_contents($mc_theme_dir."/templates/block6.php");
-$mc_block7=file_get_contents($mc_theme_dir."/templates/block7.php");
-echo $mc_block1;
-echo $mc_block2;
-echo $mc_block3;
-echo $mc_block4;
-echo $mc_block5;
-echo $mc_block6;
-echo $mc_block7;
-*/
+// quick edit blocks 
+//$mc_block1=file_get_contents($mc_theme_dir."/templates/block1.php");
+//$mc_block2=file_get_contents($mc_theme_dir."/templates/block2.php");
+//$mc_block3=file_get_contents($mc_theme_dir."/templates/block3.php");
+//$mc_block4=file_get_contents($mc_theme_dir."/templates/block4.php");
+//$mc_block5=file_get_contents($mc_theme_dir."/templates/block5.php");
+//$mc_block6=file_get_contents($mc_theme_dir."/templates/block6.php");
+//$mc_block7=file_get_contents($mc_theme_dir."/templates/block7.php");
+$mc_shelter_block1=file_get_contents($mc_theme_dir."/templates/shelter-map-block1.php");
+$mc_shelter_block2=file_get_contents($mc_theme_dir."/templates/shelter-map-block2.php");
+$mc_shelter_block3=file_get_contents($mc_theme_dir."/templates/shelter-map-block3.php");
+echo $mc_shelter_block1;
+echo $mc_shelter_block2;
+echo $mc_shelter_block3;
 ?>
 
