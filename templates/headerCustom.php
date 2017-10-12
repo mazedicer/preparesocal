@@ -192,7 +192,7 @@ $second_navbar_block_template = '<div id="second_navbar_container">
             </div>
     */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$mc_dropdown_menu_template='<div class="dropdown-menu">{dropdown_menu_content}</div>';
+$mc_dropdown_menu_template='<div class="dropdown-menu"><span class="dropdown-triangle"></span>{dropdown_menu_content}</div>';
 
 /* PUT IT ALL TOGETHER */
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);

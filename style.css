@@ -129,7 +129,7 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     background:#ccc;
     display:none;
 }
-.nav-link:last-child .dropdown-menu:before {
+.nav-link:last-child .dropdown-menu .dropdown-triangle {
     content:"";
     position: absolute;
     left: 45%;
@@ -636,13 +636,104 @@ p.affix-plus:before {
     }
 }
 @media(min-width:721px){
-    
+    .container-fluid.gcb.block2 {
+        width:100%;
+    }
+    .card-stats {
+        height:350px;
+    }
+    .card-block3 {
+        height:350px;
+    }
+    .card-block3 img {
+        height:100%;
+    }
+    .mc-sidekick {
+        padding-left:5px;
+        padding-right:5px;
+    }
+    #footerCustom {
+        height:500px;
+    }
+    #footer-content-left {
+        height:200px;
+        padding-right:0px;
+    }
+    #respond_container .block7-respond {
+        width:100%;
+    }
+    #respond_container .block7-respond p {
+        margin-bottom:0px;
+    }
+    .h1-watch img {
+        height:50px;
+    }
 }
 @media(min-width:961px){
-    
+    .mc-sidekick {
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .container-fluid.gcb.block2 {
+        width:70%;
+    }
+    .card-block3 {
+        height:100%;
+    }
+    .card-stats {
+        height:350px;
+    }
+    .card-block3 img {
+        max-height:80%;
+    }
+    #respond_container .block7-respond {
+        width:70%;
+    }
+    #footerCustom {
+        height:100%;
+    }
+    #footer-content-left {
+        padding-right:50px;
+    }
+    .form-row input {
+        width: 250px;
+        font-size: 32px;
+    }
+    .form-row button {
+        font-size: 16px;
+        width:200px;
+    }
 }
 @media(min-width:1141px){
     header #second_navbar_container .navbar #nav_container .nav-link {
         font-size: 22px;
+    }
+    .mc-sidekick {
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .container-fluid.gcb.block2 {
+        width:70%;
+    }
+    .card-block3 {
+        height:100%;
+    }
+    .card-stats {
+        height:300px;
+    }
+    .card-block3 img {
+        max-height:80%;
+    }
+    #respond_container .block7-respond {
+        width:70%;
+    }
+    #footerCustom {
+        height:100%;
+    }
+    #footer-content-left {
+        padding-right:50px;
+    }
+    .form-row input {
+        width:300px;
     }
 }

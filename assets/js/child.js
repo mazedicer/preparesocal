@@ -18,6 +18,11 @@ $(document).ready(function() {
         var dropdown_menu_half=$(".dropdown-menu").width()/2;
         var dropdown_menu_left=$(".dropdown-menu").offset().left;
         var position = (parent_left+parent_width)-dropdown_menu_half-16;
+        //if screen is <541
+        if($(window).width()<541){
+            position -= 75;
+            $(".nav-link:last-child .dropdown-menu .dropdown-triangle").css({left:"78%"});
+        }
         $(".dropdown-menu").offset({"left":position});
         //alignment tests
         //var $el=$("#second_navbar_container");
@@ -39,10 +44,24 @@ $(document).ready(function() {
             $("."+id).toggle();
         });
     }
-    //respond_container match size
-    $("#respond_container").height($("#before_respond_container").height());
+    onFirstLoadAndResize();
+   window.addEventListener('resize', function (){
+        onFirstLoadAndResize();
+    });
+    function onFirstLoadAndResize(){
+        //respond_container match size
+        $("#respond_container").height($("#before_respond_container").height());
+        //responsiveness
+        if($(window).width()<541){
+            responsiveWith541();
+        }else{
+            $(".nav-link:last-child .dropdown-menu .dropdown-triangle").css({left:"45%"});
+        }
+    }
+    
     //responsive js min-width 541
-    if($(window).width()<541){
+    function responsiveWith541(){
+        $(".nav-link:last-child .dropdown-menu .dropdown-triangle").css({left:"78%"});
         $(".no-gutter-left").css("padding-right",0);
         $(".no-gutter-right").css("padding-left",0);
         $(".side-borders").css({borderLeft:"none",borderRight:"none"});
@@ -51,4 +70,5 @@ $(document).ready(function() {
         $(".flex-row-reverse").css("justify-content","center");
         $(".flex-row").css("justify-content","center");
     }
+    
 });
