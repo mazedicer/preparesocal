@@ -516,10 +516,10 @@ p.affix-plus:before {
 .form-row button {
     width:200px;
 }
-.form-row input {
+/*.form-row input {
     width:300px;
     font-size:24px;
-}
+}*/
 .align-items-center {
     align-items: center !important;
 }
@@ -569,7 +569,7 @@ h3.find-shelter {
     header #second_navbar_container {
         padding-top: 25px;
         height:140px;
-        width:80%;
+        width:98%;
     }
     header #second_navbar_container .navbar {
         justify-content: center;
@@ -643,11 +643,12 @@ h3.find-shelter {
     .form-row {
         display: flex;
         flex-wrap: wrap;
+        justify-content:center;
     }
-    .form-row input {
+    /*.form-row input {
         width: 300px;
         font-size: 32px;
-    }
+    }*/
     .form-row button {
         font-size: 16px;
         width:200px;
@@ -694,6 +695,9 @@ h3.find-shelter {
     }
 }
 @media(min-width:961px){
+    header #second_navbar_container {
+        width:80%;
+    }
     .mc-sidekick {
         padding-left:15px;
         padding-right:15px;
@@ -724,13 +728,16 @@ h3.find-shelter {
         font-size: 32px;
     }
     .form-row button {
-        font-size: 16px;
+        font-size: 25px;
         width:200px;
     }
 }
 @media(min-width:1141px){
     header #second_navbar_container .navbar #nav_container .nav-link {
         font-size: 22px;
+    }
+    .btn {
+        font-size:25px;
     }
     .mc-sidekick {
         padding-left:15px;
@@ -759,5 +766,6 @@ h3.find-shelter {
     }
     .form-row input {
         width:300px;
+        font-size:32px;
     }
 }
