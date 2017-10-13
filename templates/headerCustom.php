@@ -213,9 +213,10 @@ echo $mc_header;
 //$mc_block7=file_get_contents($mc_theme_dir."/templates/block7.php");
 $mc_shelter_block1=file_get_contents($mc_theme_dir."/templates/shelter-map-block1.php");
 $mc_shelter_block2=file_get_contents($mc_theme_dir."/templates/shelter-map-block2.php");
-$mc_shelter_block3=file_get_contents($mc_theme_dir."/templates/shelter-map-block3.php");
 echo $mc_shelter_block1;
 echo $mc_shelter_block2;
-echo $mc_shelter_block3;
+//include($mc_theme_dir."/templates/shelter-map-block3.php");
+include( get_stylesheet_directory() . '/templates/shelter-map-block3.php' );
+
 ?>
 
