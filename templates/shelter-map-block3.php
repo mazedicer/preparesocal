@@ -87,13 +87,12 @@ $faq_container_template='<div class="container-fluid faq-container">
                         </div>
                     </div>
                 </div>';
-
-echo $mc_shelter_block3;
 //custom fields from FAQ, FAQ2, FAQ3 groups 
+$final_faq_content='';
+$faq_containers='';
 while(have_posts()){
     the_post();
     $faq_index=1;
-    $faq_containers='';
     while( have_rows('faq_page') ){
         the_row();
         $faq_container='';
@@ -101,11 +100,11 @@ while(have_posts()){
         $faq_image=get_sub_field('faq_image');
         $faq_title=get_sub_field('faq_title');
         $faq_section_1=get_sub_field('faq_section_1');
-        $faq_section_1_content=get_sub_field('faq_section_1_content');
+        $faq_section_1_content=strip_tags(get_sub_field('faq_section_1_content'));
         $faq_section_2=get_sub_field('faq_section_2');
-        $faq_section_2_content=get_sub_field('faq_section_2_content');
+        $faq_section_2_content=strip_tags(get_sub_field('faq_section_2_content'));
         $faq_section_3=get_sub_field('faq_section_3');
-        $faq_section_3_content=get_sub_field('faq_section_3_content');
+        $faq_section_3_content=strip_tags(get_sub_field('faq_section_3_content'));
         $section_1=isThereSection($faq_section_1,$faq_section_1_content);
         if(is_array($section_1)){
             //add section 1
@@ -127,12 +126,7 @@ while(have_posts()){
         $faq_container=str_replace(['{faq_image_url}','{faq_title}','{faq_container_sections}'],[$faq_image,$faq_title,$faq_sections],$faq_container_template);
         $faq_containers.=$faq_container;
     }
-    $final_content=str_replace('{faq_containers}',$faq_containers,$shelter_map_block3_template);
-    echo $final_content;
+    //$final_faq_content=str_replace('{faq_containers}',$faq_containers,$shelter_map_block3_template);
 }
-function isThereSection($faq_section,$faq_section_content){
-    if($faq_section!==''){
-        return array($faq_section,$faq_section_content);
-    }
-}
+
 ?>

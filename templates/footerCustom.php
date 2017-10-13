@@ -8,9 +8,8 @@ $terms_of_use="";
 $contact_us="";
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //FOOTER TEMPLATE
-////////////////////////////////////////////////////////////////////////////////////////////////////
-$mc_footer_template='<footer id="footerCustom">
-                        <div class="container">
+/*was inside footerCustom
+<div class="container">
                             <div class="row">
                                 <div id="footer-content-left" class="col-md-6 d-flex justify-content-right">
                                     <div class="footer-left-content text-white">
@@ -31,6 +30,9 @@ $mc_footer_template='<footer id="footerCustom">
                                 </div>
                             </div>
                         </div>
+                        */
+////////////////////////////////////////////////////////////////////////////////////////////////////
+$mc_footer_template='<footer id="footerCustom">
                         <div class="footerCopyright text-xs-center">
                             <p>Copyright © {current_year} The American Red Cross | Site Maintained by DesignStudio | <a href="{privacy_policy_url}">Privacy Policy</a> | <a href="{terms_of_use}">Terms of Use</a> | <a href="{contact_us}">Contact Us</a></p>
                         </div>
