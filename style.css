@@ -480,7 +480,9 @@ p.affix-plus:before {
 #respond_container .block7-respond {
     width:70%;
 }
-/* footer */
+/*//////////////////////////////////////////////////////////////////////////////////
+footer 
+//////////////////////////////////////////////////////////////////////////////////*/
 #footerCustom {
     background:transparent;
     color:#000;
@@ -528,7 +530,9 @@ p.affix-plus:before {
     width: auto;
     max-width: none;
 }
-/* shelter-map*/
+/* //////////////////////////////////////////////////////////////////////////////////
+shelter-map
+//////////////////////////////////////////////////////////////////////////////////*/
 .header-overlay {
     position:relative;
     left:100px;
@@ -555,6 +559,46 @@ p span.bold {
 h3.find-shelter {
     margin-top:-50px;
 }
+/*FAQs*/
+.faq-container {
+    padding-top:50px;
+}
+.faq-image-container {
+    padding-left:100px;
+    padding-right:50px;
+}
+.item a::before {
+    content:"-";
+}
+.item a {
+    font-size:18px;
+    font-weight:bold;
+    color:blue;
+}
+.item a:focus, .item a:hover, .item a:active {
+    color:#000;
+    text-decoration:none;
+}
+.item a.collapsed {
+    color:blue;
+}
+.item a.collapsed::before {
+    content:"+";
+}
+.faq-item-text {
+    text-align: left;
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: 500;
+} 
+.faq-topics h4 {
+    border-bottom: 2px solid #ccc;
+    line-height: 1.7;
+}
+/*//////////////////////////////////////////////////////////////////////////////////
+media queries
+//////////////////////////////////////////////////////////////////////////////////*/
+
 @media(min-width:541px){
     .col-sm-6 {
         width:25%;
