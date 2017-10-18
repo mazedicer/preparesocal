@@ -75,7 +75,14 @@ $(document).ready(function() {
     if(pathname.indexOf('shelter-map')>0){
         var shelter_header=$('div.header-overlay');
         var shelter_hero=$('.ahsBuild');
-        var dim=(shelter_hero.height()/2)+(shelter_header.height());
-        shelter_header.offset({top:dim});
+        var dimh=(shelter_hero.height()/2)+(shelter_header.height());
+        var winw = $(window).width();
+        var dimw=(winw-340)/2;
+        if($(window).width()<541){
+            var dimhb=(shelter_hero.height()/7)+(shelter_header.height());
+            shelter_header.offset({top:dimhb,left:dimw});
+        }else{
+            shelter_header.offset({top:dimh});
+        }
     }
 });
