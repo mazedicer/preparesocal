@@ -22,9 +22,6 @@ h1, h2 {
 button:focus {
     outline:none;
 }
-body > div.bodyContainer > div.bodyContent > div > div > div > div > div.row {
-    margin-top:-100px;
-}
 .col-sm-6 {
     width:50%;
     float:left;
@@ -161,6 +158,20 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 /* overlay buttons */
 .btn-overlay {
     margin-left:0px !important;
+}
+/* mainblock */
+.cubeSidebarContent {
+    display:none;
+}
+.main-cube {
+    margin-top:-140px;
+}
+.TWLA-services {
+    width:80% !important;
+}
+.service-item {
+    height:250px;
+    margin-bottom:20px;
 }
 /* block1 */
 .mc-sidekick {
