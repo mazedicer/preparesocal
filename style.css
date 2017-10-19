@@ -599,6 +599,42 @@ h3.find-shelter {
     text-align: center;
     margin-left: 50px;
 }
+#wpgmza_iw_holder_1{
+    display:none !important;
+}
+.ds_wpgm_li {
+    font-weight: 800;
+    font-size: 1.5em;
+    display: inline-block;
+    width: 25%;
+    float: left;
+}
+.ds_wpgm_address .wpgmza_iw_address_p {
+    width: 35%;
+    display: inline-block;
+    text-align: left;
+    font-style:normal;
+    margin-bottom:0px;
+}
+.ds_wpgm_button {
+    padding-left:25%;
+}
+.ds_wpgm_button a {
+    color:cornflowerblue;
+}
+.wpgmza_button {
+    color: deepskyblue;
+    background-color: #FFFFFF;
+    font-weight: 600;
+    padding:0px;
+    display:block;
+    border:none;
+    font-family: arial;
+    border-style:none;
+    text-align:left;
+    text-decoration:none;
+    float:none !important;
+}
 /*//////////////////////////////////////////////////////////////////////////////////
 media queries
 //////////////////////////////////////////////////////////////////////////////////*/
