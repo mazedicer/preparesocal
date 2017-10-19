@@ -55,9 +55,16 @@ $(document).ready(function() {
     window.addEventListener('resize', function (){
         main();
     });
+    
+    //fires every time window is scrolled
+    window.addEventListener('scroll',function(){
+        console.log($(window).scrollTop());
+    });
 
     //main function
     function main(){
+        //home page mainblock
+        var mainblock_header=$(".main-cube h2").html("Before It's <i>Too Late</i>");
         //home page > block8
         //respond_container match size
         $("#respond_container").height($("#before_respond_container").height());
@@ -65,6 +72,12 @@ $(document).ready(function() {
             homeWidth541();
         }else{
             $(".nav-link:last-child .dropdown-menu .dropdown-triangle").css({left:"45%"});
+            $(".TWLA-services").css("width", "100%");
+        }
+        if($(window).width()<1025){
+            homeWidth1025();
+        }else{
+            $('.ahsBuild').css("height","60vh");
         }
         //shelter-map page > header title
         shelterMapHeaderTitle();
@@ -80,6 +93,10 @@ $(document).ready(function() {
         $(".card-block5:eq(0)").css({position:"relative",top:"-65px"});
         $(".flex-row-reverse").css("justify-content","center");
         $(".flex-row").css("justify-content","center");
+        $(".TWLA-services").css("width", "80%");
+    }
+    function homeWidth1025(){
+        $('.ahsBuild').css("height","40vh");
     }
     //shelter-map header title
     function shelterMapHeaderTitle(){

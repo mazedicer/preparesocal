@@ -153,7 +153,7 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 /* Hero/above the fold */
 .ahsBuild {
-    height:60vh;
+    height:40vh;
 }
 /* overlay buttons */
 .btn-overlay {
@@ -165,9 +165,6 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 .main-cube {
     margin-top:-140px;
-}
-.TWLA-services {
-    width:80% !important;
 }
 .service-item {
     height:250px;
@@ -756,6 +753,19 @@ media queries
     }
 }
 @media(min-width:721px){
+    .TWLA-unit .TWLA-cube {
+        width:90%;
+        min-height:200px;
+        height:80%;
+    }
+    .service-item img {
+        max-width:25%;
+    }
+    .service-item h4 {
+        padding-top:20px;
+        width:70%;
+        font-size:1.2em;
+    }
     .container-fluid.gcb.block2 {
         width:100%;
     }
@@ -849,6 +859,12 @@ media queries
     }
 }
 @media(min-width:1141px){
+    .service-item {
+        margin-bottom:0px;
+    }
+    .TWLA-unit .TWLA-cube {
+        height:90%;
+    }
     header #second_navbar_container .navbar #nav_container .nav-link {
         font-size: 22px;
     }
