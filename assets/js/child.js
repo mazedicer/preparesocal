@@ -55,11 +55,36 @@ $(document).ready(function() {
     window.addEventListener('resize', function (){
         main();
     });
-    
-    //fires every time window is scrolled
-    window.addEventListener('scroll',function(){
-        console.log($(window).scrollTop());
-    });
+
+    //fires if window width is > 765 and window is scrolled
+    if($(window).width()>765){
+        window.addEventListener('scroll',animateMe);
+        var cim1={elem:".cim1",css_options_start:{bottom:"10%",left:"10%",opacity:"1"},css_options_end:{bottom:"0%",left:"0%",opacity:"0"}};
+        var cim2={elem:".cim2",css_options_start:{bottom:"10%",left:"10%",opacity:"1"},css_options_end:{bottom:"0%",left:"60%",opacity:"0"}};
+        var cim3={elem:".cim3",css_options_start:{bottom:"10%",left:"10%",opacity:"1"},css_options_end:{bottom:"0%",left:"60%",opacity:"0"}};
+        var cim4={elem:".cim4",css_options_start:{bottom:"5%",left:"0%",opacity:"1"},css_options_end:{bottom:"0%",left:"40%",opacity:"0"}};
+        var cim5={elem:".cim5",css_options_start:{bottom:"5%",left:"0%",opacity:"1"},css_options_end:{bottom:"0%",left:"40%",opacity:"0"}};
+        function animateMe(){
+            var animatable=[cim1,cim2,cim3,cim4,cim5];
+            for(var i=0;i<animatable.length;i++){
+                animateElement(animatable[i]);
+            }
+        }
+        function animateElement(animate_me){
+            var css_options={};
+            var css_options_start=animate_me.css_options_start;
+            var css_options_end=animate_me.css_options_end;
+            var top_pos=$(animate_me.elem).offset().top;
+            //console.log($(window).scrollTop()+ " " + (top_pos-$(window).height()));
+            var animate_me_opacity=$(animate_me.elem).css("opacity");
+            if(animate_me_opacity==='0' && $(window).scrollTop()>(top_pos-$(window).height())+100){
+                css_options=css_options_start;
+            }else if(animate_me_opacity==='1' && $(window).scrollTop()<(top_pos-$(window).height())+100){
+                  css_options=css_options_end;       
+            }
+            $(animate_me.elem).animate(css_options);
+        }
+    }
 
     //main function
     function main(){

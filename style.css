@@ -170,6 +170,33 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     height:250px;
     margin-bottom:20px;
 }
+/* Why Should I Prepare? */
+.main-stats p, .main-stats h2 {
+    color:#000;
+}
+.stats-row.row {
+    justify-content: space-around;
+}
+.stats-item {
+    height:300px;
+    background:#fff !important;
+    border:none;
+    text-align:center;
+    border-radius:0;
+    padding-top:40px;
+    padding-bottom:350px;    
+    box-shadow: 0px 3px 10px 3px #ccc;
+}
+.stats-item img {
+    max-height:120px;
+    margin-bottom:30px;
+}
+.stats-content p {
+    margin-bottom: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+}
 /* block1 */
 .mc-sidekick {
     padding-left:90px;
@@ -245,6 +272,7 @@ h4 {
 .container.stats-container {
     display:flex;
     justify-content:center;
+    margin-bottom:40px;
 }
 .card-stats {
     height:300px;
@@ -296,8 +324,21 @@ p.card-text {
     text-align:left;
 }
 .card-img-overlay {
+    /*
     bottom:10%;
     left:10%;
+    opacity:1;
+    */
+    bottom:0%;
+    left:0%;
+    opacity:0;
+}
+.card-img-overlay.cim2, .card-img-overlay.cim3 {
+    left:60%;
+}
+.card-img-overlay.cim4, .card-img-overlay.cim5 {
+    left:40%;
+    bottom:0%;
 }
 .card-img-overlay .card-title {
     font-size:2rem;
