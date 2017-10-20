@@ -158,7 +158,7 @@ $stats_background = get_field('stats_bg_color');
 			forEach(_countList, function (value, index) {
 				var endValue = _getRandomInt(50, 100);
 
-				// https://github.com/inorganik/countUp.js
+				// https://github.com/inorganik/countUp.js Mario wrote this
 				var queueCountAnimation = new countUp(value, 0, endValue, 0, 12);
 				queueCountAnimation.start();
 			});

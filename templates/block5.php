@@ -9,7 +9,7 @@
                 <p>&nbsp;</p>
                 <div class="col-md-4 no-gutter-left mc-statcard">
                     <div class="card-block5 mb-3">
-                        <img class="card-img-top-stats" src="wp-content/themes/persuader-child/assets/img/ICONS/make-a-kit.jpg" alt="DISASTER KITS">
+                        <img class="card-img-top-stats flipsim1" src="wp-content/themes/persuader-child/assets/img/ICONS/make-a-kit.jpg" alt="DISASTER KITS">
                         <div class="card-body">
                             <h4 class="card-title text-danger">DISASTER KITS</h4>
                             <p class="card-text">The first step in being prepared for a disaster is organizing your preparedness kit.</p>

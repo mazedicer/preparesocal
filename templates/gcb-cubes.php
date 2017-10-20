@@ -239,7 +239,7 @@ $container = get_field( 'defaultContainerOption' ); ?>
 				<div class="col-md-12 col-lg-4 cubeSidebar">
 					<div class="cubeSidebarContent">
 						<h2 class="mobile-title text-xs-center font-weight-bold hidden-lg-up pt-1">Click an icon to
-							learn more</h2>
+							learn more my friend</h2>
 
 						<?php echo $cubeGridSideBarContent; ?>
 					</div>
