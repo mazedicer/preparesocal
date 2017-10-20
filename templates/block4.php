@@ -9,7 +9,7 @@
                 <p>&nbsp;</p>
                 <div class="col-md-4 no-gutter-left mc-statcard">
                     <div class="card-block4 text-white mb-3">
-                        <img class="card-img-top-stats" src="wp-content/themes/persuader-child/assets/img/ICONS/twitter-logo.png" alt="Re-Tweet Us">
+                        <img class="card-img-top-stats flipsim1" src="wp-content/themes/persuader-child/assets/img/ICONS/twitter-logo.png" alt="Re-Tweet Us">
                         <div class="card-body">
                             <h4 class="card-title">Re-Tweet Us</h4>
                             <p class="card-text affix-plus">Become a Twitter Hero</p>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-4 no-gutter-left no-gutter-right mc-statcard">
                     <div class="card-block4 text-white mb-3">
-                        <img class="card-img-top-stats" src="wp-content/themes/persuader-child/assets/img/ICONS/fb-logo.png" alt="Share Our Posts">
+                        <img class="card-img-top-stats flipsim2" src="wp-content/themes/persuader-child/assets/img/ICONS/fb-logo.png" alt="Share Our Posts">
                         <div class="card-body">
                             <h4 class="card-title">Share Our Posts</h4>
                             <p class="card-text affix-plus">Become a Facebook Hero</p>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-4 no-gutter-right mc-statcard">
                     <div class="card-block4 text-white mb-3">
-                        <img class="card-img-top-stats" src="wp-content/themes/persuader-child/assets/img/ICONS/ig-logo.png" alt="Follow Our Instagram">
+                        <img class="card-img-top-stats flipsim3" src="wp-content/themes/persuader-child/assets/img/ICONS/ig-logo.png" alt="Follow Our Instagram">
                         <div class="card-body">
                             <h4 class="card-title">Follow Our Instagram</h4>
                             <p class="card-text affix-plus">Become a Instagram Hero</p>

@@ -4,6 +4,11 @@
         <div class="container-fluid gcb block3 ID13099">
             <div class="row">
                 <!-- block3 starts here -->
+                <div class="container stats-container">
+                    <div class="row">
+                        <button type="button" class="btn btn-danger">FREE ALARM INSPECTION</button>
+                    </div>
+                </div>
                 <div class="container-block3">
                     <div class="row">
                         <div class="card-block3 bg-dark text-white">

@@ -31,11 +31,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="container stats-container">
-                    <div class="row">
-                        <button type="button" class="btn btn-danger">FREE ALARM INSPECTION</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
