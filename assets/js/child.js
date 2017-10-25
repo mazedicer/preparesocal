@@ -57,21 +57,19 @@ $(document).ready(function() {
     });
 
     //fires if window width is > 765 and window is scrolled
-    if($(window).width()>765 && (pathname.indexOf('home')>0 || pathname.length<2 ) ){
+    if(pathname.indexOf('home')>0 || pathname.length<2){
         window.addEventListener('scroll',animateMe);
         var cim1={elem:".cim1",control_prop:"opacity"};
         var cim2={elem:".cim2",control_prop:"opacity"};
         var cim3={elem:".cim3",control_prop:"opacity"};
-        var cim4={elem:".cim4",control_prop:"opacity"};
-        var cim5={elem:".cim5",control_prop:"opacity"};
-        var flipsim1={elem:".flipsim1",control_prop:"height"};
-        var flipsim2={elem:".flipsim2",control_prop:"height"};
-        var flipsim3={elem:".flipsim3",control_prop:"height"};
-        var flipsim4={elem:".flipsim4",control_prop:"height"};
-        var flipsim5={elem:".flipsim5",control_prop:"height"};
-        var flipsim6={elem:".flipsim6",control_prop:"height"};
+        var flipcard1={elem:".mc-flipcard1",control_prop:"transformx"};
+        var flipcard2={elem:".mc-flipcard2",control_prop:"transformy"};
+        var flipcard3={elem:".mc-flipcard3",control_prop:"transformx"};
+        var flipcard4={elem:".mc-flipcard4",control_prop:"transformy"};
+        var flipcard5={elem:".mc-flipcard5",control_prop:"transformx"};
+        var flipcard6={elem:".mc-flipcard6",control_prop:"transformy"};
         function animateMe(){
-            var animatable=[cim1,cim2,cim3,cim4,cim5,flipsim1,flipsim2,flipsim3,flipsim4,flipsim5,flipsim6];
+            var animatable=[cim1,cim2,cim3,flipcard1,flipcard2,flipcard3,flipcard4,flipcard5,flipcard6];
             for(var i=0;i<animatable.length;i++){
                 animateElement(animatable[i]);
             }
@@ -83,12 +81,17 @@ $(document).ready(function() {
             var css_options_end=animate_me.css_options_end;
             var top_pos=$(animate_me.elem).offset().top;
             var control_prop=animate_me.control_prop;
-            if($(window).scrollTop()>(top_pos-$(window).height())+100){
-                if(control_prop=="opacity" && $(animate_me.elem).css("opacity") != "1"){
-                    $(animate_me.elem).toggleClass("show-overlay");
-                }
-                if(control_prop=="height" && $(animate_me.elem).css("height") != "120px"){
-                    $(animate_me.elem).toggleClass("show-img");
+            if($(window).scrollTop()>(top_pos-$(window).height())){
+                switch(control_prop){
+                    case "opacity":
+                        $(animate_me.elem).addClass("show-overlay",1000);
+                        break;
+                    case "transformx":
+                        $(animate_me.elem).addClass("mc-flipitx",1000);
+                        break;
+                    case "transformy":
+                        $(animate_me.elem).addClass("mc-flipity",1000);
+                        break;
                 }
             }
         }
@@ -97,10 +100,8 @@ $(document).ready(function() {
     //main function
     function main(){
         //home page mainblock
-        var mainblock_header=$(".main-cube h2").html("Before It's <i>Too Late</i>");
+        var mainblock_header=$(".ahsContent.hrFloat h2").html("Before It's <i>Too Late</i>");
         //home page > block8
-        //respond_container match size
-        $("#respond_container").height($("#before_respond_container").height());
         if($(window).width()<541){
             homeWidth541();
         }else{
