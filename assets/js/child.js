@@ -56,7 +56,7 @@ $(document).ready(function() {
         main();
     });
 
-    //fires if window width is > 765 and window is scrolled
+    //fires if homepage
     if(pathname.indexOf('home')>0 || pathname.length<2){
         window.addEventListener('scroll',animateMe);
         var cim1={elem:".cim1",control_prop:"opacity"};
@@ -103,12 +103,13 @@ $(document).ready(function() {
                 }
             }
         }
+        //block2 stats counter
         var count_animation_run=false;
         function countIt(){
             if(count_animation_run){
                 return false;
             }
-            console.log("executed");
+            //console.log("executed");
             count_animation_run = true;
             $('.countup').each(function () {
                 $(this).animate({
@@ -117,11 +118,35 @@ $(document).ready(function() {
                     duration: 2000,
                     easing: 'swing',
                     step: function (now,fx) {
-                        console.log(now+" "+fx);
                         $(this).text(Math.ceil(now));
                     }
                 });
             });
+        }
+        //block7 time until next response, reset at 8min
+        var response_time = "8:00";
+        var response_interval = setInterval(responseTimer,1000);
+        function responseTimer() {
+          var timer = response_time.split(':');
+          //by parsing integer, I avoid all extra string processing
+          var minutes = parseInt(timer[0], 10);
+          var seconds = parseInt(timer[1], 10);
+          --seconds;
+          minutes = (seconds < 0) ? --minutes : minutes;
+          if(minutes < 0){
+              clearInterval(response_interval);
+              response_time="8:00";
+              var timer = response_time.split(':');
+              //by parsing integer, I avoid all extra string processing
+              var minutes = parseInt(timer[0], 10);
+              var seconds = parseInt(timer[1], 10);
+              response_interval = setInterval(responseTimer,1000);
+          } 
+          seconds = (seconds < 0) ? 59 : seconds;
+          seconds = (seconds < 10) ? '0' + seconds : seconds;
+          //minutes = (minutes < 10) ?  minutes : minutes;
+          $('.time_to').html(minutes + ':' + seconds);
+          response_time=minutes + ':' + seconds;
         }
     }
 
