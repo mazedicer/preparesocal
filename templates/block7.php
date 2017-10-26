@@ -67,12 +67,12 @@
                     </div>
                 </div>
                 <div class="row padtop-60">
-                    <div id="before_respond_container" class="col-md-3 no-gutter-right row-height">
+                    <div class="col-md-3 no-gutter-right row-height">
                         <img class="block7-img" src="wp-content/themes/persuader-child/assets/img/PHOTOS/587x455-timer-left.jpg" alt="Red Cross Responding">
                     </div>
                     <div id="respond_container" class="col-md-6 d-flex justify-content-center bg-danger text-white row-height">
                         <div class="block7-respond">
-                            <p class="h1 h1-watch"><img src="wp-content/themes/persuader-child/assets/img/ICONS/timer-icon.png" alt="Timer"> 2:05</p>
+                            <p class="h1 h1-watch"><img src="wp-content/themes/persuader-child/assets/img/ICONS/timer-icon.png" alt="Timer"> <span class="time_to">2:05</span></p>
                             <p><span class="muted">Until Red Cross responds to the next</span> disaster</p>
                         </div>
                     </div>

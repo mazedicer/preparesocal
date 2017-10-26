@@ -51,6 +51,7 @@ h3 {
     text-align: center;
     font-weight: bold;
     font-size:30px;
+    width:80%;
 }
 h4 {
     font-weight:bold;
@@ -193,7 +194,7 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 /* Hero/above the fold */
 .ahsBuild {
-    height:40vh;
+    height:60vh;
 }
 /* overlay buttons */
 .btn-overlay {
@@ -351,7 +352,7 @@ p.card-text {
     left:-1100px;
     position:relative;
     max-width:999%;
-    width:100%;
+    width:400%;
 }
 .card-block3 img.card-block3-img2 {
     max-width: 999%;
@@ -465,9 +466,23 @@ p.affix-plus:before {
     background: #fff !important;
     border: none;
     border-radius: 0;
+    -ms-transform: rotateX(-90deg); /* IE 9 */
+    -webkit-transform: rotateX(-90deg); /* Chrome, Safari, Opera */
+    -ms-transform-origin: 0% 100%; /* IE 9 */
+    -webkit-transform-origin:0% 100%;
+    transform-origin:0% 100%;
+    transform: rotateX(-90deg);
+    transition: transform 1s;
+}
+.mc-flipitxb {
+    -ms-transform: rotateY(0deg); /* IE 9 */
+    -webkit-transform: rotateY(0deg); /* Chrome, Safari, Opera */
+    transform: rotateY(0deg);
 }
 .card-block6 img {
-    width:100%;
+    width:auto;
+    height:100%;
+    margin-bottom:15px;
 }
 .card-block6 .cim4,.card-block6 .cim5 {
     text-align:center;
@@ -560,9 +575,11 @@ div.container-block7 div.row div.col-lg-3 {
 }
 div.container-block7 div.row div.row-height {
     height:450px;
+    margin-bottom:15px;
 }
 div.container-block7 div.row div.row-height .block7-img {
-    width:100%;
+    width:auto;
+    height:100%;
 }
 .padtop-60 {
     padding-top:60px;
@@ -812,7 +829,7 @@ media queries
         display:block;
     }
     .main-cube {
-        margin-top:-190px;
+        margin-top:-250px;
     }
     .mc-sidekick {
         padding-left:15px;
@@ -917,6 +934,10 @@ media queries
         height:200px;
         padding-right:0px;
     }
+    div.container-block7 div.row div.row-height .block7-img {
+        width:100%;
+        height:100%;
+    }
     #respond_container .block7-respond {
         width:100%;
     }
@@ -983,6 +1004,9 @@ media queries
     }
 }
 @media(min-width:1141px){
+    h3 {
+        width:auto;
+    }
     .service-item {
         margin-bottom:0px;
     }
@@ -1007,6 +1031,10 @@ media queries
         padding-top:100px;
         padding-bottom:350px;
         margin-bottom:0px;
+    }
+    .card-block6 img {
+        width:100%;
+        height:auto;
     }
     .card-block3 img {
         max-height:80%;

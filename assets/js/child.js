@@ -68,8 +68,10 @@ $(document).ready(function() {
         var flipcard4={elem:".mc-flipcard4",control_prop:"transformy"};
         var flipcard5={elem:".mc-flipcard5",control_prop:"transformx"};
         var flipcard6={elem:".mc-flipcard6",control_prop:"transformy"};
+        var flipcard7={elem:".card-block6",control_prop:"transformxb"};
+        var count_it={elem:".countup",control_prop:"count"};
         function animateMe(){
-            var animatable=[cim1,cim2,cim3,flipcard1,flipcard2,flipcard3,flipcard4,flipcard5,flipcard6];
+            var animatable=[cim1,cim2,cim3,flipcard1,flipcard2,flipcard3,flipcard4,flipcard5,flipcard6,flipcard7,count_it];
             for(var i=0;i<animatable.length;i++){
                 animateElement(animatable[i]);
             }
@@ -89,11 +91,37 @@ $(document).ready(function() {
                     case "transformx":
                         $(animate_me.elem).addClass("mc-flipitx",1000);
                         break;
+                    case "transformxb":
+                        $(animate_me.elem).addClass("mc-flipitxb",1000);
+                        break;
                     case "transformy":
                         $(animate_me.elem).addClass("mc-flipity",1000);
                         break;
+                    case "count":
+                        countIt();
+                        break;
                 }
             }
+        }
+        var count_animation_run=false;
+        function countIt(){
+            if(count_animation_run){
+                return false;
+            }
+            console.log("executed");
+            count_animation_run = true;
+            $('.countup').each(function () {
+                $(this).animate({
+                    Counter: $(this).text()
+                    }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now,fx) {
+                        console.log(now+" "+fx);
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
         }
     }
 
@@ -172,23 +200,23 @@ $(document).ready(function() {
             if($('#wpgmza_map_1').find($("#wpgmza_iw_holder_1")).length>0){
                 //map location template
                 var description_template=`<div class="ds_wpgm_phone"><span class="ds_wpgm_li">Phone:</span> <p class="wpgmza_iw_address_p">{phone}</p></div>
-                                            <div class="ds_wpgm_capacity"><span class="ds_wpgm_li">Capacity:</span> <p class="wpgmza_iw_address_p">{capacity}</p></div>
-                                            <div class="ds_wpgm_status"><span class="ds_wpgm_li">Status:</span> <p class="wpgmza_iw_address_p">{status}</p></div>
-                                            <hr>
-                                            <h4>Shelter Services</h4>
-                                            <div class="shelter-services">{shelter_services}</div>`;
+<div class="ds_wpgm_capacity"><span class="ds_wpgm_li">Capacity:</span> <p class="wpgmza_iw_address_p">{capacity}</p></div>
+<div class="ds_wpgm_status"><span class="ds_wpgm_li">Status:</span> <p class="wpgmza_iw_address_p">{status}</p></div>
+<hr>
+<h4>Shelter Services</h4>
+<div class="shelter-services">{shelter_services}</div>`;
                 var open24_template=`<div class="shelter-service">
-                                    <img src="/wp-content/uploads/open-24-hours-signboard.png" alt="open 24 hours" />
-                                    <h6>Open 24 Hours</h6>
-                                    </div>`;
+<img src="/wp-content/uploads/open-24-hours-signboard.png" alt="open 24 hours" />
+<h6>Open 24 Hours</h6>
+</div>`;
                 var firstaid_template=`<div class="shelter-service">
-                                    <img src="/wp-content/uploads/nurse-head.png" alt="first aid" />
-                                    <h6>First Aid</h6>
-                                    </div>`;
+<img src="/wp-content/uploads/nurse-head.png" alt="first aid" />
+<h6>First Aid</h6>
+</div>`;
                 var snacks_template=`<div class="shelter-service">
-                                    <img src="/wp-content/uploads/bananas.png" alt="free snacks" />
-                                    <h6>Free Snacks</h6>
-                                    </div>`;
+<img src="/wp-content/uploads/bananas.png" alt="free snacks" />
+<h6>Free Snacks</h6>
+</div>`;
                 var shelter_services="";
                 //grab the content off of the wp google map plugin
                 var ds_wpgmza_holder=$("#wpgmza_iw_holder_1");
