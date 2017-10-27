@@ -42,7 +42,7 @@
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/mercy-logo.png" alt="MERCY WORLDWIDE">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row padtop-60">
                     <!-- sponsor logos -->
                     <div class="col-sm-6 col-lg-3">
                         <img src="wp-content/themes/persuader-child/assets/img/LOGOS/farmers-insurance-logo.png" alt="Farmers Insurance">

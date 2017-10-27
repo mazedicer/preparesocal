@@ -26,6 +26,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 body {
     font-family: Arial,sans-serif;
 }
+p, th, td, dl, dt {
+    font-size:18px;
+}
 /* first navigation bar justified to the right */
 h1 {
     font-family: 'Roboto-Black', sans-serif !important;
@@ -60,6 +63,9 @@ h4 {
 .ahsContent {
     bottom:30px !important;
 }
+.bodyContent h1, .bodyContent h2, .bodyContent h3, .bodyContent h4, .bodyContent p, .bodyContent ul, .bodyContent ol {
+    margin-bottom:0px;
+}
 .btn {
     font-family: 'Roboto-Black', sans-serif;
     font-size: 16px;
@@ -68,8 +74,8 @@ h4 {
     /* height: 50px; */
     padding-left: 30px !important;
     padding-right: 30px !important;
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 button:focus {
     outline:none;
@@ -140,7 +146,7 @@ header #second_navbar_container .navbar #navbar_logo_div a {
     text-align:left;
 }
 header #second_navbar_container .navbar #navbar_logo_div a img {
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
 }
 header #second_navbar_container .navbar #nav_container .nav-link {
@@ -207,6 +213,9 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 .ahsBuild {
     height:60vh !important;
 }
+.ahsBuild h2 {
+    font-size:40px;
+}
 /* overlay buttons */
 .btn-overlay {
     margin-left:0px !important;
@@ -220,6 +229,9 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
 }
 .main-cube h2 {
     margin-bottom:0;
+}
+.bodyContent > .main-cube ~ .main-cube {
+    margin-top:0px;
 }
 .service-item {
     height:250px;
@@ -274,8 +286,8 @@ p {
 }
 p.row-p {
     font-size: 18px;
-    font-weight: 600;
     text-align: left;
+    margin-bottom:15px;
     width: 70%;
 }
 p span {
@@ -398,7 +410,7 @@ p.card-text {
     opacity:1;
 }
 .card-img-overlay .card-title {
-    font-size:3rem;
+    font-size:24px;
     margin-bottom:0px;
 }
 .card-img-overlay p {
@@ -414,7 +426,30 @@ p.card-text {
 .no-gutter-left {
     padding-left:0px;
 }
-/* block4 */
+/* block4 social media block */
+section:nth-child(4) {
+    display:flex;
+    justify-content: center;
+}
+/* ID13216 on the live server */
+section:nth-child(4) > .ID13181 {
+    width:70%;
+}
+section:nth-child(4) > div > div.main-cube.container-fluid {
+    margin-top:0px;
+}
+section:nth-child(4) > div > div.main-cube.container-fluid h2 {
+    color:#333;
+}
+section:nth-child(4) > div > div.main-cube.container-fluid div.TWLA-unit-wrap-default {
+    background:#077daf !important;
+}
+section:nth-child(4) > div > div.main-cube.container-fluid div.TWLA-unit-wrap-default > img {
+    width:40%;
+}
+section:nth-child(4) > div > div.main-cube.container-fluid .service-item {
+    height:300px;
+}
 .card-block4 {
     max-height:450px;
     min-height:450px;
@@ -490,8 +525,8 @@ p.affix-plus:before {
     -webkit-transform: rotateY(0deg); /* Chrome, Safari, Opera */
     transform: rotateY(0deg);
 }
-.card-block6 img {
-    width:auto;
+.card-block6 .card-img {
+    width:100%;
     height:100%;
     margin-bottom:15px;
 }
@@ -502,7 +537,8 @@ p.affix-plus:before {
 }
 .card-block6 .cim4 img,.card-block6 .cim5 img {
     min-height:0px;
-    margin-bottom:10%;
+    margin-bottom:5%;
+    width:60%;
 }
 .half-gutter-left {
     padding-left:7.5px;
@@ -584,8 +620,11 @@ p.affix-plus:before {
 div.container-block7 div.row div.col-lg-3 {
     text-align:center;
 }
+div.container-block7 div.row div.col-lg-3 img {
+    width:60%;
+}
 div.container-block7 div.row div.row-height {
-    height:450px;
+    height:350px;
     margin-bottom:15px;
 }
 div.container-block7 div.row div.row-height .block7-img {
@@ -611,8 +650,8 @@ div.container-block7 div.row div.row-height .block7-img {
     justify-content:flex-end;
 }
 .h1-watch img {
-    height: 70px;
-    vertical-align: middle;
+    height: 2em;
+    vertical-align: bottom;
     padding-bottom:10px;
 }
 .muted {
@@ -621,6 +660,7 @@ div.container-block7 div.row div.row-height .block7-img {
 }
 .time_to {
     color:#fff;
+    font-size: 2em;
 }
 #respond_container {
     align-items:center;
@@ -658,10 +698,12 @@ footer
     display:block;
     text-align:center;
 }
-/*.form-row input {
+.form-row input {
     width:300px;
-    font-size:24px;
-}*/
+    font-size:16px;
+    height: 42px;
+    border-radius: 4px;
+}
 .align-items-center {
     align-items: center !important;
 }
@@ -776,6 +818,7 @@ h3.find-shelter {
 }
 .ds_wpgm_button {
     padding-left:20%;
+    padding-top:20px;
 }
 .ds_wpgm_button a {
     color:cornflowerblue;
@@ -965,9 +1008,6 @@ media queries
     #respond_container .block7-respond p {
         margin-bottom:0px;
     }
-    .h1-watch img {
-        height:50px;
-    }
 }
 @media(min-width:961px){
     header #second_navbar_container {
@@ -997,10 +1037,6 @@ media queries
     }
     #footer-content-left {
         padding-right:50px;
-    }
-    .form-row input {
-        width: 250px;
-        font-size: 32px;
     }
     .header-overlay {
         position:relative;
@@ -1053,7 +1089,7 @@ media queries
         padding-bottom:350px;
         margin-bottom:0px;
     }
-    .card-block6 img {
+    .card-block6 card-img {
         width:100%;
         height:auto;
     }
@@ -1068,9 +1104,5 @@ media queries
     }
     #footer-content-left {
         padding-right:50px;
-    }
-    .form-row input {
-        width:300px;
-        font-size:32px;
     }
 }

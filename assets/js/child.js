@@ -62,16 +62,13 @@ $(document).ready(function() {
         var cim1={elem:".cim1",control_prop:"opacity"};
         var cim2={elem:".cim2",control_prop:"opacity"};
         var cim3={elem:".cim3",control_prop:"opacity"};
-        var flipcard1={elem:".mc-flipcard1",control_prop:"transformx"};
-        var flipcard2={elem:".mc-flipcard2",control_prop:"transformy"};
-        var flipcard3={elem:".mc-flipcard3",control_prop:"transformx"};
         var flipcard4={elem:".mc-flipcard4",control_prop:"transformy"};
         var flipcard5={elem:".mc-flipcard5",control_prop:"transformx"};
         var flipcard6={elem:".mc-flipcard6",control_prop:"transformy"};
         var flipcard7={elem:".card-block6",control_prop:"transformxb"};
         var count_it={elem:".countup",control_prop:"count"};
         function animateMe(){
-            var animatable=[cim1,cim2,cim3,flipcard1,flipcard2,flipcard3,flipcard4,flipcard5,flipcard6,flipcard7,count_it];
+            var animatable=[cim1,cim2,cim3,flipcard4,flipcard5,flipcard6,flipcard7,count_it];
             for(var i=0;i<animatable.length;i++){
                 animateElement(animatable[i]);
             }
@@ -115,7 +112,7 @@ $(document).ready(function() {
                 $(this).animate({
                     Counter: $(this).text()
                     }, {
-                    duration: 2000,
+                    duration: 1000,
                     easing: 'swing',
                     step: function (now,fx) {
                         $(this).text(Math.ceil(now));

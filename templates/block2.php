@@ -4,6 +4,10 @@
         <div class="container-fluid gcb block2 ID13098">
             <div class="row">
                 <!-- block2 starts here -->
+                <h3>Why Should I Prepare?</h3>
+                        <p class="row-p">If you can plan for a vacation, why not plan for your safety?<br>
+                        Each year, the Red Cross responds to nearly 64,000 disasters,<br>
+                        the vast majority for which are <span>home fires</span>.</p>
                 <div class="col-md-4 mc-statcard">
                     <div class="card-stats mb-3">
                         <img class="card-img-top-stats" src="wp-content/themes/persuader-child/assets/img/ICONS/7-people-die-icon.png" alt="7 people die from a home fire every day.">
