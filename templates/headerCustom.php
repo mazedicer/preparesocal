@@ -130,8 +130,7 @@ function returnCHildLinks($parent_menu_item){
 $mc_logo_img = $mc_theme_dir . "/assets/img/LOGOS/prepare-socal-logo.png";
 
 //EXTERNAL FONTS
-$mc_google_material_icons = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">';
+//$mc_google_material_icons = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
 
 //EXTERNAL STYLES
 $mc_bootstrap_stylesheet ='';// '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">';
@@ -197,7 +196,7 @@ $mc_dropdown_menu_template='<div class="dropdown-menu"><span class="dropdown-tri
 /* PUT IT ALL TOGETHER */
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
 //$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
-$mc_header_template=$mc_google_material_icons.$mc_bootstrap_stylesheet.'<header>{content}</header>';
+$mc_header_template=$mc_bootstrap_stylesheet.'<header>{content}</header>';
 $second_navbar_replace=array("{logo_url}","{dropdown_menu}");
 $second_navbar_replace_with=array($mc_logo_img,$mc_dropdown_menu);
 $second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block_template);
