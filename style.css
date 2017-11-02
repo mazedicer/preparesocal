@@ -212,9 +212,6 @@ header #second_navbar_container .navbar #nav_container .nav-link:last-child .mat
     border-bottom: 1px solid #fff;
 }
 /* Hero/above the fold */
-.ahsBuild {
-    height:60vh !important;
-}
 .ahsBuild h2 {
     font-size:40px;
 }
@@ -726,6 +723,7 @@ shelter-map
     margin-bottom:0.8rem;
     margin-left:0px;
     max-width:350px;
+    color:#fff;
 }
 .header-overlay .shelter-header img {
     height:50px;
@@ -859,9 +857,6 @@ media queries
     }
 }
 @media(min-width:541px){
-    .ahsBuild {
-        height:70vh !important;
-    }
     .col-sm-6 {
         width:25%;
         float:left;
@@ -968,9 +963,6 @@ media queries
 @media(min-width:721px){
     .ahsContent {
         margin-bottom:250px;
-    }
-    .ahsBuild {
-        height: 40vh !important;
     }
     .main-cube {
         margin-top:-100px;
@@ -1085,9 +1077,6 @@ media queries
 @media(min-width:1141px){
     h3 {
         width:auto;
-    }
-    .ahsBuild {
-        height: 60vh !important;
     }
     .ahsContent {
         margin-bottom: 60px;

@@ -158,13 +158,6 @@ $(document).ready(function() {
             $(".nav-link:last-child .dropdown-menu .dropdown-triangle").css({left:"45%"});
             $(".TWLA-services").css("width", "100%");
         }
-        if($(window).width()<1025){
-            homeWidth1025();
-        }else{
-            $('.ahsBuild').css("height","70vh");
-        }
-        //shelter-map page > header title
-        shelterMapHeaderTitle();
     }
 
     //homepage responsive js min-width 541
@@ -178,29 +171,6 @@ $(document).ready(function() {
         $(".flex-row-reverse").css("justify-content","center");
         $(".flex-row").css("justify-content","center");
         $(".TWLA-services").css("width", "80%");
-    }
-    function homeWidth1025(){
-        $('.ahsBuild').css("height","40vh");
-    }
-    //shelter-map header title
-    function shelterMapHeaderTitle(){
-        if(pathname.indexOf('shelter-map')>0){
-            var shelter_header=$('div.header-overlay');
-            var shelter_hero=$('.ahsBuild');
-            var dimh=(shelter_hero.height()/2)+(shelter_header.height());
-            var winw=$(window).width();
-            var dimw=(winw-340)/2;
-            if($(window).width()<541){
-                var dimhb=(shelter_hero.height()/7)+(shelter_header.height());
-                shelter_header.offset({top:dimhb,left:dimw});
-            }else if($(window).width()<769){
-                var dimhc=(shelter_hero.height()/2)+(shelter_header.height());
-                var dimwc=(winw-640)/2;
-                shelter_header.offset({top:dimhc,left:dimwc});
-            }else{
-                shelter_header.offset({top:dimh});
-            }
-        }
     }
     //shelter-map map marker infowindow
     /*
