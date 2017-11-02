@@ -9,6 +9,9 @@
         {breadcrumbs}
         {defaultContentEditor}
     </div>
+    <section>
+        {wpgm}
+    </section>
     {sections}
 </div>
 <script>

@@ -36,6 +36,26 @@ if ( $defaultTypeofPage == "normal" ) {
         }
     }
     $defaultContentEditor = get_field( "defaultContentEditor", $pageID );
+    
+    $the_query = new WP_Query( 'post_type=Shelters' );
+    if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+            $id=get_the_ID();
+            $address=get_field('shelter_address',$id);
+            $status=get_field('shelter_status',$id);
+            $services=get_field('shelter_services',$id);
+            if(is_array($services)){
+                foreach($services as $service){
+                    var_dump($service);
+                }
+            }
+            $phone_number=get_field('shelter_phone_number',$id);
+            $capacity=get_field('shelter_capacity',$id);
+        }
+    }
+    
+    
     $main_template=file_get_contents(get_stylesheet_directory_uri().'/templates/view/normal.php');
     $section_find_open_shelters=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-find-open-shelters.php');
     $section_faq=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-faq.php');
