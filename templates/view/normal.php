@@ -94,29 +94,85 @@
             zoom: 8,
             minZoom: 4,
             maxZoom: 10,
-            center: {lat: -34.397, lng: 150.644}
+            center: {lat: 32.569, lng: -116.954}
         });
         map.setOptions({styles:map_style});
-                        var geocoder = new google.maps.Geocoder();
-                        geocodeAddresses(geocoder,map);
-                       }
-
-                       function geocodeAddresses(geocoder, resultsMap) {
-            for(var i=0;i<addresses.length;i++){
-                geocoder.geocode({'address': addresses[i]}, function(results, status) {
-                    if (status === 'OK') {
-                        resultsMap.setCenter(results[0].geometry.location);
-                        var marker = new google.maps.Marker({
-                            map: resultsMap,
-                            position: results[0].geometry.location,
-                            icon: '../wp-content/uploads/arc-map-icon.png'
-                        });
-                    } else {
-                        alert('Geocode was not successful for the following reason: ' + status);
-                    }
-                    console.log(marker.length);
-                });
+        //map.setCenter(results[0].geometry.location);
+        //icon: '../wp-content/uploads/arc-map-icon.png'
+        geoCodeAddresses(addresses, function(results) {
+            // Do something after getting done with Geocoding of multiple addresses
+            for(var i = 0; i < results.length; i++) {
+                //console.log(results[i].lat()+" "+results[i].lng());
+                addresses[i]['Latitude']=results[i].lat();
+                addresses[i]['Longitude']=results[i].lng();
+                displayMarkers();
+            }
+        });
+        function geoCodeAddresses(addresses, callback) {
+            var coords = [];
+            for(var i = 0; i < addresses.length; i++) {
+                var address=addresses[i]['Address'];
+                var geocoder = new google.maps.Geocoder();
+                if (geocoder) {
+                    geocoder.geocode({'address':address}, function (results, status) {
+                        if (status === 'OK') {
+                            coords.push(results[0].geometry.location);
+                            if(coords.length == addresses.length) {
+                                if( typeof callback == 'function' ) {
+                                    callback(coords);
+                                }
+                            }
+                        } 
+                        else {
+                            throw('No results found: ' + status);
+                        }
+                    });
+                }
             }
         }
+        // This function will iterate over markersData array
+        // creating markers with createMarker function
+        function displayMarkers(){
+            // this variable sets the map bounds and zoom level according to markers position
+            var bounds = new google.maps.LatLngBounds();
+            // For loop that runs through the info on markersData making it possible to createMarker function to create the markers
+            for (var i=0; i<addresses.length; i++){
+                var latlng=new google.maps.LatLng(addresses[i]['Latitude'], addresses[i]['Longitude']);
+                var title = addresses[i]['Title'];
+                var address = addresses[i]['Address'];
+                createMarker(latlng,title,address);
+                // Marker’s Lat. and Lng. values are added to bounds variable
+                bounds.extend(latlng); 
+            }
+            // Finally the bounds variable is used to set the map bounds
+            // with API’s fitBounds() function
+            map.fitBounds(bounds);
+        }
+        // This function creates each marker
+        function createMarker(latlng, title, address){
+            var marker = new google.maps.Marker({
+                map: map,
+                position: latlng,
+                title: title,
+                icon: '../wp-content/uploads/arc-map-icon.png'
+            });
+            // This event expects a click on a marker
+            // When this event is fired the infowindow content is created
+            // and the infowindow is opened
+            google.maps.event.addListener(marker, 'click', function() {
+                console.log(title+" "+address);
+                /* Variable to define the HTML content to be inserted in the infowindow
+                var iwContent = '<div id="iw_container">' +
+                    '<div class="iw_title">' + name + '</div>' +
+                    '<div class="iw_content">' + address1 + '<br />' +
+                    address2 + '<br />' +
+                    postalCode + '</div></div>';
+                // including content to the infowindow
+                infoWindow.setContent(iwContent);
+                // opening the infowindow in the current map and at the current marker location
+                infoWindow.open(map, marker);*/
+            });
+        }
+    }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA15oypl4nlP5eu4Rq9S-UMrYCuBNny9C8&callback=initMap"></script>

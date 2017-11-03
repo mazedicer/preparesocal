@@ -40,20 +40,32 @@ if ( $defaultTypeofPage == "normal" ) {
     $wpgm_array=[];
     $the_query = new WP_Query( 'post_type=Shelters' );
     if ( $the_query->have_posts() ) {
+        $location=array();
         while ( $the_query->have_posts() ) {
             $the_query->the_post();
             $id=get_the_ID();
+            $title=get_the_title();
             $address=get_field('shelter_address',$id);
             $status=get_field('shelter_status',$id);
+            $phone_number=get_field('shelter_phone_number',$id);
+            $capacity=get_field('shelter_capacity',$id);
             $services=get_field('shelter_services',$id);
             /*if(is_array($services)){
                 foreach($services as $service){
                     
                 }
             }*/
-            $phone_number=get_field('shelter_phone_number',$id);
-            $capacity=get_field('shelter_capacity',$id);
-            array_push($wpgm_array,$address);
+            $location['ID']=$id;
+            $location['Title']=$title;
+            $location['Address']=$address;
+            $location['Latitude']="";
+            $location['Longitude']="";
+            $location['Status']=$status;
+            $location['Phone Number']=$phone_number;
+            $location['Capacity']=$capacity;
+            $location['Services']=$services;
+            array_push($wpgm_array,$location);
+            $location=array();
         }
     }
     $wpgm='<script>var addresses='.json_encode($wpgm_array).';</script>';
