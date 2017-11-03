@@ -175,4 +175,4 @@
         }
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA15oypl4nlP5eu4Rq9S-UMrYCuBNny9C8&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOURKEY&callback=initMap"></script>
