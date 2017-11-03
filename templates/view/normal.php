@@ -16,7 +16,6 @@
         {breadcrumbs}
         {defaultContentEditor}
     </div>
-    <section></section>
     {wpgm}
     {sections}
 </div>
@@ -146,8 +145,8 @@
                 //console.log(results[i].lat()+" "+results[i].lng());
                 addresses[i]['Latitude']=results[i].lat();
                 addresses[i]['Longitude']=results[i].lng();
-                displayMarkers();
             }
+            displayMarkers();
         });
         function geoCodeAddresses(addresses, callback) {
             var coords = [];
@@ -176,7 +175,7 @@
         function displayMarkers(){
             // this variable sets the map bounds and zoom level according to markers position
             var bounds = new google.maps.LatLngBounds();
-            // For loop that runs through the info on markersData making it possible to createMarker function to create the markers
+            // For loop that runs through the info on addresses making it possible to createMarker function to create the markers
             for (var i=0; i<addresses.length; i++){
                 var id=addresses[i]['ID'];
                 var lat=addresses[i]['Latitude'];
