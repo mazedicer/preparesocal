@@ -36,7 +36,8 @@ if ( $defaultTypeofPage == "normal" ) {
         }
     }
     $defaultContentEditor = get_field( "defaultContentEditor", $pageID );
-    
+    /*pull shelter data*/
+    $wpgm_array=[];
     $the_query = new WP_Query( 'post_type=Shelters' );
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
@@ -45,23 +46,24 @@ if ( $defaultTypeofPage == "normal" ) {
             $address=get_field('shelter_address',$id);
             $status=get_field('shelter_status',$id);
             $services=get_field('shelter_services',$id);
-            if(is_array($services)){
+            /*if(is_array($services)){
                 foreach($services as $service){
-                    var_dump($service);
+                    
                 }
-            }
+            }*/
             $phone_number=get_field('shelter_phone_number',$id);
             $capacity=get_field('shelter_capacity',$id);
+            array_push($wpgm_array,$address);
         }
     }
-    
-    
+    $wpgm='<script>var addresses='.json_encode($wpgm_array).';</script>';
     $main_template=file_get_contents(get_stylesheet_directory_uri().'/templates/view/normal.php');
     $section_find_open_shelters=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-find-open-shelters.php');
+    $section_googlemap=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-googlemap.php');
     $section_faq=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-faq.php');
-    $sections=$section_find_open_shelters.$section_faq;
-    $replace=['{ahs}','{mainContentCSS}','{breadcrumbs}','{defaultContentEditor}','{sections}'];
-    $replace_with=[$pc_ahs,$mainContentCSS,$breadcrumbs,$defaultContentEditor,$sections];
+    $sections=$section_find_open_shelters.$section_googlemap.$section_faq;
+    $replace=['{ahs}','{mainContentCSS}','{breadcrumbs}','{defaultContentEditor}','{wpgm}','{sections}'];
+    $replace_with=[$pc_ahs,$mainContentCSS,$breadcrumbs,$defaultContentEditor,$wpgm,$sections];
     $content=str_replace($replace,$replace_with,$main_template);
     echo $content;
 }
