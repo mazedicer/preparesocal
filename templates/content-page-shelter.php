@@ -71,7 +71,9 @@ if ( $defaultTypeofPage == "normal" ) {
     $wpgm='<script>var addresses='.json_encode($wpgm_array).';</script>';
     $main_template=file_get_contents(get_stylesheet_directory_uri().'/templates/view/normal.php');
     $section_find_open_shelters=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-find-open-shelters.php');
-    $section_googlemap=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-googlemap.php');
+    $section_googlemap_pre=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-googlemap.php');
+    $driving_directions=file_get_contents(get_stylesheet_directory_uri().'/templates/view/driving-directions.php');
+    $section_googlemap=str_replace('{directions}',$driving_directions,$section_googlemap_pre);
     $section_faq=file_get_contents(get_stylesheet_directory_uri().'/templates/view/section-faq.php');
     $sections=$section_find_open_shelters.$section_googlemap.$section_faq;
     $replace=['{ahs}','{mainContentCSS}','{breadcrumbs}','{defaultContentEditor}','{wpgm}','{sections}'];

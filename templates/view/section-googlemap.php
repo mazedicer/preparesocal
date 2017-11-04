@@ -9,9 +9,8 @@
                     <h3 class="ds_wpgm_title">Please select a location<br>on the map</h3>
                     <div class="ds_wpgm_address"></div>
                     <div class="ds_wpgm_button"></div>
-                    <div class="ds_wpgm_description">
-                        <!-- this gets filled with child.js -->
-                    </div>
+                    <div class="ds_wpgm_directions">{directions}</div>
+                    <div class="ds_wpgm_description"></div>
                 </div>
             </div>
         </div>
