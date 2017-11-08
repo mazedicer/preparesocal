@@ -7,10 +7,12 @@
  */
 include_once(get_template_directory().'/head.php' );
 //wp_head();
+//get_header();
 
-   get_template_part('/templates/content-page-shelter');
+   include('content-page-shelter.php');
 
  //footer.php - includes the footer switcher and version
 include_once(get_template_directory().'/footer.php');
 //wp_footer();
+//get_footer();
 ?>

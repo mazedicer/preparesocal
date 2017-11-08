@@ -13,7 +13,7 @@ $defaultPageTitleQ=get_field( 'defaultPageTitleQ', $pageID );
 /* Check if normal or build by content blocks */
 $defaultTypeofPage=get_field( 'defaultTypeofPage', $pageID );
 /* Page is build by normal Wysiwyg editor */
-if ( $defaultTypeofPage == "normal" ) {
+//if ( $defaultTypeofPage == "normal" ) {
     /* default template advanced custom fields */
     $mainContentBlockOption = get_field( 'mainContentBlockOption', $pageID );
     if ( $mainContentBlockOption == "over" ) {
@@ -80,7 +80,7 @@ if ( $defaultTypeofPage == "normal" ) {
     $replace_with=[$pc_ahs,$mainContentCSS,$breadcrumbs,$defaultContentEditor,$wpgm,$sections];
     $content=str_replace($replace,$replace_with,$main_template);
     echo $content;
-}
+//}
 if ( $defaultTypeofPage == "gcbs" ) {
     echo "General content blocks are disabled on this template";
 }
