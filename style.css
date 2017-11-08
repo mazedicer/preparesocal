@@ -47,7 +47,7 @@ h3 {
     text-align: center;
     font-weight: bold;
     font-size:30px;
-    width:80%;
+    /* width:80%; does not work like this! wrap the h3 instead! */
 }
 h4 {
     font-family: 'Roboto-Black',sans-serif !important;
@@ -337,7 +337,7 @@ p span {
 .container.stats-container {
     display:flex;
     justify-content:center;
-    margin-bottom:40px;
+    margin-bottom:60px;
 }
 .card-stats {
     height:300px;
@@ -441,6 +441,10 @@ section:nth-child(4) > div > div.main-cube.container-fluid div.TWLA-unit-wrap-de
 section:nth-child(4) > div > div.main-cube.container-fluid .service-item {
     height:300px;
 }
+.make_difference_sub_header p {
+    max-width: 80%;
+    margin-bottom: 20px;
+}
 .card-block4 {
     max-height:450px;
     min-height:450px;
@@ -480,14 +484,17 @@ p.affix-plus:before {
     font-weight: bold;
 }
 /* block5 */
+.get-a-kit-header {
+    max-width:80% !important;
+}
 .card-block5 {
-    height: 340px;
+    height: 300px;
     background: #fff !important;
     border: none;
     text-align: center;
     border-radius: 0;
-    padding-top: 20px;
-    padding-bottom: 80px;
+    /*padding-top: 20px;
+    padding-bottom: 80px;*/
 }
 .side-borders {
     border-left: 2px solid #ccc;
@@ -495,7 +502,7 @@ p.affix-plus:before {
 }
 /* block6 */
 .card-block6 {
-    min-height:600px;
+    min-height:550px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -518,7 +525,7 @@ p.affix-plus:before {
 }
 .card-block6 .card-img {
     width:auto;
-    height:100%;
+    height:550px;
     margin-bottom:15px;
 }
 .card-block6 .cim4,.card-block6 .cim5 {
@@ -612,7 +619,7 @@ div.container-block7 div.row div.col-lg-3 {
     text-align:center;
 }
 div.container-block7 div.row div.col-lg-3 img {
-    width:60%;
+    width:80%;
 }
 div.container-block7 div.row div.row-height {
     height:350px;
@@ -624,6 +631,9 @@ div.container-block7 div.row div.row-height .block7-img {
 }
 .padtop-60 {
     padding-top:60px;
+}
+div.container-block7 > div:nth-child(3) > div:nth-child(2),div.container-block7 > div:nth-child(3) > div:nth-child(3),div.container-block7 > div:nth-child(4) > div:nth-child(2),div.container-block7 > div:nth-child(4) > div:nth-child(3) {
+    margin-bottom: 60px;
 }
 .d-flex {
     display:flex;
@@ -663,13 +673,20 @@ div.container-block7 div.row div.row-height .block7-img {
 footer 
 //////////////////////////////////////////////////////////////////////////////////*/
 #footerCustom {
-    background:transparent;
+    background:#cccccc;
     color:#000;
-    position: relative;
+    display: flex;
+    justify-content: center;
 }
 #footerCustom p {
     font-size:16px;
 
+}
+#footerCustom a, #footerCustom > div.footerCopyright > p > span {
+    color:#000;
+}
+#footerCustom .footerCopyright {
+    max-width: 80%;
 }
 #footer-content-left {
     background:#6d6e70;
@@ -923,6 +940,12 @@ media queries
     .card-block7 {
         margin-left:50px;
     }
+    div.container-block7 div.row div.col-lg-3 img {
+        width:60%;
+    }
+    div.container-block7 > div:nth-child(3) > div:nth-child(2),div.container-block7 > div:nth-child(3) > div:nth-child(3),div.container-block7 > div:nth-child(4) > div:nth-child(2),div.container-block7 > div:nth-child(4) > div:nth-child(3) {
+    margin-bottom: 0px;
+}
     #respond_container {
         margin-top:0px;
         background:#e11b22;
@@ -1111,6 +1134,9 @@ media queries
     .card-block6 card-img {
         width:100%;
         height:auto;
+    }
+    section:nth-child(4) > div > div.main-cube.container-fluid {
+        max-width:70%;
     }
     .card-block3 img {
         max-height:80%;

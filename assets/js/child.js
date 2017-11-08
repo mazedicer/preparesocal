@@ -120,6 +120,8 @@ $(document).ready(function() {
                 });
             });
         }
+        //block 4 social media blocks
+        $(".text-xs-center.pt-1.pb-1.hidden-md-down").after('<div class="make_difference_sub_header"><p>Become a <span class="text-danger">#LocalHero</span>. If a disaster strikes, you can help save lives.</p></div>');
         //block7 time until next response, reset at 8min
         var response_time = "8:00";
         var response_interval = setInterval(responseTimer,1000);
@@ -167,7 +169,7 @@ $(document).ready(function() {
         $(".no-gutter-right").css("padding-left",0);
         $(".side-borders").css({borderLeft:"none",borderRight:"none"});
         $(".btn-danger:eq(4)").css({position:"relative",left:"-5%"});
-        $(".card-block5:eq(0)").css({position:"relative",top:"-65px"});
+        //$(".card-block5:eq(0)").css({position:"relative",top:"-65px"});
         $(".flex-row-reverse").css("justify-content","center");
         $(".flex-row").css("justify-content","center");
         $(".TWLA-services").css("width", "80%");
@@ -186,65 +188,6 @@ $(document).ready(function() {
     }
 }';
 */
-    if(pathname.indexOf('shelter-map')>0){
-        var wpgmza_map=document.getElementById("wpgmza_map_1");
-        wpgmza_map.addEventListener('mouseup',function(){
-            if($('#wpgmza_map_1').find($("#wpgmza_iw_holder_1")).length>0){
-                //map location template
-                var description_template=`<div class="ds_wpgm_phone"><span class="ds_wpgm_li">Phone:</span> <p class="wpgmza_iw_address_p">{phone}</p></div>
-<div class="ds_wpgm_capacity"><span class="ds_wpgm_li">Capacity:</span> <p class="wpgmza_iw_address_p">{capacity}</p></div>
-<div class="ds_wpgm_status"><span class="ds_wpgm_li">Status:</span> <p class="wpgmza_iw_address_p">{status}</p></div>
-<hr>
-<h4>Shelter Services</h4>
-<div class="shelter-services">{shelter_services}</div>`;
-                var open24_template=`<div class="shelter-service">
-<img src="/wp-content/uploads/open-24-hours-signboard.png" alt="open 24 hours" />
-<h6>Open 24 Hours</h6>
-</div>`;
-                var firstaid_template=`<div class="shelter-service">
-<img src="/wp-content/uploads/nurse-head.png" alt="first aid" />
-<h6>First Aid</h6>
-</div>`;
-                var snacks_template=`<div class="shelter-service">
-<img src="/wp-content/uploads/bananas.png" alt="free snacks" />
-<h6>Free Snacks</h6>
-</div>`;
-                var shelter_services="";
-                //grab the content off of the wp google map plugin
-                var ds_wpgmza_holder=$("#wpgmza_iw_holder_1");
-                var title=ds_wpgmza_holder.find(".wpgmza_iw_title").html();
-                var address=ds_wpgmza_holder.find(".wpgmza_iw_address").html();
-                var content=ds_wpgmza_holder.find(".wpgmza_iw_description").html();
-                var parsed_content=JSON.parse(content);
-                var phone=parsed_content.phone;
-                var capacity=parsed_content.capacity;
-                var status=parsed_content.status;
-                var services=parsed_content.services;
-                var button=ds_wpgmza_holder.find(".wpgmza_iw_buttons").html();
-                $(".ds_wpgm_title").html(title);
-                $(".ds_wpgm_address").html('<span class="ds_wpgm_li">Address:</span> '+address);
-                if(parsed_content.services.open24==1){
-                    shelter_services+=open24_template;
-                }
-                if(parsed_content.services.firstaid==1){
-                    shelter_services+=firstaid_template;
-                }
-                if(parsed_content.services.snacks==1){
-                    shelter_services+=snacks_template;
-                }
-                if(status=="FULL"){
-                    var new_status='<span class="text-danger">'+status+'</span>';
-                }else{
-                    var new_status=status;
-                }
-                var replace = ["{phone}","{capacity}","{status}","{shelter_services}"];
-                var replace_with = [phone,capacity,new_status,shelter_services];
-                var description=description_template.replaceArray(replace,replace_with);
-                $(".ds_wpgm_description").html(description);
-                $(".ds_wpgm_button").html(button);
-            }
-        });
-    }
     //utility function to replace content using two arrays
     String.prototype.replaceArray = function(find, replace) {
         var replaceString = this;
