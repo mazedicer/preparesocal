@@ -3,7 +3,7 @@
         display:none !important;
     }
     #map {
-        height: 400px;
+        height: 425px;
     }
     div.section-googlemap {
         padding-left:0px;

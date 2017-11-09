@@ -162,7 +162,7 @@ $first_nabvar_block_template = '<div id="first_navbar_container">
 $second_navbar_block_template = '<div id="second_navbar_container">
                             <nav class="navbar">
                                 <div id="navbar_logo_div">
-                                    <a href="#">
+                                    <a href="/">
                                         <img src="{logo_url}" alt="Prepare Socal Logo">
                                     </a>
                                 </div>
