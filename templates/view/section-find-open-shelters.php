@@ -8,8 +8,10 @@
                             <h1 class="shelter-header">Shelter Map <img src="../wp-content/themes/persuader-child/assets/img/SHELTER-MAP/shelter-map-aspot-icon.png"/></h1>
                             <p>Know where to go in case of emergencies and disasters.</p>
                         </div>
-                        <h3 class="find-shelter">Find Open Shelters</h3>
-                        <p class="row-p">If an emergency has forced you to evacuate your home, the Red Cross can help. Red Cross services, including food and shelter, are always provided at <span class="bold">no cost.</span></p>
+                        <div class="find-shelter-main">
+                            <h3 class="find-shelter">Find Open Shelters</h3>
+                            <p class="row-p">If an emergency has forced you to evacuate your home, the Red Cross can help. Red Cross services, including food and shelter, are always provided at <span class="bold">no cost.</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
