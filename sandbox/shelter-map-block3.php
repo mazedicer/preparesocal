@@ -90,7 +90,7 @@ $faq_container_template='<div class="container-fluid faq-container">
                         </div>
                     </div>
                 </div>';
-//custom fields from FAQ, FAQ2, FAQ3 groups 
+//custom fields from FAQs Page 
 $final_faq_content='';
 $faq_containers='';
 while(have_posts()){

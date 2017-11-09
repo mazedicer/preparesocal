@@ -1,4 +1,76 @@
-<section>
+<?php
+$main_faq_section_template='<section style="margin-top:0px; margin-bottom:50px;">
+                                    <a name="shelter-map-block3"></a>
+                                    <div class="gcbBG gcbBG13140 ">
+                                        <div class="container-fluid gcb shelter-map-block3 ID13140">
+                                            <div class="row">
+                                                <h3>Shelter FAQ</h3>
+                                                <!-- block3 starts here -->
+                                                {faq_containers}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>';
+$faq_container_template='<div class="container-fluid faq-container">
+                    <div class="row faq-content">
+                        <div class="faq-body">
+                            <div class="col-md-5 faq-image-container">
+                                <img class="faq-image" src="{faq_image_url}" alt="{faq_title}"/>    
+                            </div>
+                            <div class="col-md-7 faq-topics">
+                                <div class="accordions-div">
+                                    <!-- parent -->
+                                    <h4>{faq_title}</h4>
+                                    {faq_container_sections}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+$faq_container_section_template='<div id="faq_accordionp{faq_index}" data-children=".item">
+                                    <!-- child item -->
+                                    <div class="item">
+                                        <a data-toggle="collapse" data-parent="#faq_accordionp{faq_index}" href="#faq_accordion{faq_index}" aria-expanded="true" aria-controls="faq_accordion{faq_index}">
+                                            {faq_section}
+                                        </a>
+                                        <div id="faq_accordion{faq_index}" class="collapse show" role="tabpanel">
+                                            <p class="faq-item-text mb-3">
+                                                {faq_section_content}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>';
+//custom fields from FAQs Page 
+$final_faq_content='';
+$faq_containers='';
+/*
+while(have_posts()){
+    the_post();
+    $faq_index=1;
+    while( have_rows('faq_page') ){
+        the_row();
+        $faq_container='';
+        $faq_sections='';
+        $faq_image=get_sub_field('faq_image');
+        $faq_title=get_sub_field('faq_title');
+        $faqs=get_sub_field('faqs');
+        if(have_rows($faqs)){
+            while(have_rows($faqs)){
+                the_row();
+                $faq_question=get_sub_field('faq_question');
+                $faq_answer=get_sub_field('faq_answer');
+                $faq_sections.=str_replace(['{faq_index}','{faq_section}','{faq_section_content}'],[$faq_index,$faq_question,$faq_answer],$faq_container_section_template);
+                $faq_index++;
+            }
+        }
+        $faq_container=str_replace(['{faq_image_url}','{faq_title}','{faq_container_sections}'],[$faq_image,$faq_title,$faq_sections],$faq_container_template);
+        $faq_containers.=$faq_container;
+    }
+    $final_faq_content=str_replace('{faq_containers}',$faq_containers,$main_faq_section_template);
+}*/
+?>
+
+<!-- <section>
     <a name="shelter-map-block3"></a>
     <div class="gcbBG">
         <div class="container-fluid gcb shelter-map-block3">
@@ -105,4 +177,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
