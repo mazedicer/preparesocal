@@ -400,14 +400,35 @@ p.card-text {
     bottom:0%;
     left:0%;
     opacity:0;
-    -webkit-transition: opacity, bottom, left, 1s; /* For Safari 3.1 to 6.0 */
-    transition: opacity, bottom, left, 1s;
+    -webkit-transition: bottom, left, 1s; /* For Safari 3.1 to 6.0 */
+    transition: bottom, left, 1s;
 }
 .show-overlay {
     bottom:10%;
     left:10%;
-    opacity:1;
+    opacity:0;
+    /*keyframes*/
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-name: fadeIn;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-fill-mode: forwards;
 }
+
+@-webkit-keyframes fadeIn {
+   from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeIn {
+   from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .card-img-overlay .card-title {
     font-size:24px;
     margin-bottom:0px;
