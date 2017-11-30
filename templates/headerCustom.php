@@ -96,7 +96,7 @@ foreach ( (array) $mc_menu_items as $key => $menu_item ) {
     }
 }
 function getLinkItem($_child_link){
-    $mc_menu_obj=wp_get_nav_menu_object( "307" );
+    $mc_menu_obj=wp_get_nav_menu_object( "349" );
     $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
@@ -110,7 +110,7 @@ function returnCHildLinks($parent_menu_item){
     $main_link=$parent_menu_item->ID;
     $_child_links=array();
     //iterate over $mc_menu_items and check for children
-    $mc_menu_obj=wp_get_nav_menu_object( "307" );
+    $mc_menu_obj=wp_get_nav_menu_object( "349" );
     $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
@@ -138,28 +138,28 @@ $mc_bootstrap_stylesheet ='';// '<link rel="stylesheet" href="https://maxcdn.boo
 //SCRIPTS
 //$mc_script1 = '<script src="{script_url}"></script>';
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//FIRST NAVBAR BLOCK
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************************************************
+UTILITIES NAVBAR BLOCK
+***********************************************************************************************************************/
 $first_nabvar_block_template = '<div id="first_navbar_container">
-                            <div id="nav_container">
-                                <ul class="nav justify-content-end">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contact</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Espa&#241;ol</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>';
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//SECOND NAVBAR BLOCK
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$second_navbar_block_template = '<div id="second_navbar_container">
+                                                    <div id="nav_container">
+                                                        <ul class="nav justify-content-end">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" href="#">About</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" href="#">Contact</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" href="#">Espa&#241;ol</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>';
+/************************************************************************************************************************
+MAIN NAVBAR BLOCK
+***********************************************************************************************************************/
+/*$second_navbar_block_template = '<div id="second_navbar_container">
                             <nav class="navbar">
                                 <div id="navbar_logo_div">
                                     <a href="/">
@@ -170,6 +170,23 @@ $second_navbar_block_template = '<div id="second_navbar_container">
                                     <a class="nav-link" href="#">Get Prepared</a>
                                     <a class="nav-link" href="#">My Neighborhood</a>
                                     <a class="nav-link" href="#">How Can I Help?</a>
+                                    <a class="nav-link" href="#" data-toggle="dropdown">
+                                        <i class="material-icons active-menu">menu</i>
+                                        <i class="material-icons inactive-menu">clear</i>
+                                        {dropdown_menu}
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>';*/
+$second_navbar_block_template = '<div id="second_navbar_container">
+                            <nav class="navbar">
+                                <div id="navbar_logo_div">
+                                    <a href="/">
+                                        <img src="{logo_url}" alt="Prepare Socal Logo">
+                                    </a>
+                                </div>
+                                <div id="nav_container">
+                                    {main_navbar}
                                     <a class="nav-link" href="#" data-toggle="dropdown">
                                         <i class="material-icons active-menu">menu</i>
                                         <i class="material-icons inactive-menu">clear</i>
@@ -192,7 +209,6 @@ $second_navbar_block_template = '<div id="second_navbar_container">
     */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $mc_dropdown_menu_template='<div class="dropdown-menu"><span class="dropdown-triangle"></span>{dropdown_menu_content}</div>';
-
 /* PUT IT ALL TOGETHER */
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
 //$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
