@@ -36,6 +36,7 @@ $(document).ready(function() {
     //DROPDOWN SUB-MENU LINKS
     $(".dropdown-item").on("click",function(e){
         e.stopPropagation();
+        window.location.href=$(this).attr('data-url');
     });
     if($(".dropdown-item.has-child-links").length > 0){
         $(".dropdown-item.has-child-links").on("click",function(){

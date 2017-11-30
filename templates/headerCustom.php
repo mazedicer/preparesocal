@@ -58,7 +58,7 @@ foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
 }
 */
-$mc_regular_link='<button class="dropdown-item" type="button" onclick="goTo(\'{url}\')">{title}</button>';
+$mc_regular_link='<button class="dropdown-item" type="button" data-url="{url}">{title}</button>';
 $mc_parent_link='<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
 $mc_child_link='<button class="dropdown-item sub-menu-item _{parent_id}" type="button" onclick="goTo(\'{url}\')">{title}</button>';
 $mc_child_links=array();
