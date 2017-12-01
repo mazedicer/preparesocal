@@ -65,7 +65,7 @@ function mcReturnMainMenu(){
     $mc_primary_menu=wp_get_nav_menu_object("Primary Menu");
     $mc_menu_items = wp_get_nav_menu_items($mc_primary_menu->term_id);
     $mc_child_links=array();
-    $main_menu="";
+    //$main_menu="";
     /*template for main navigation with links*/
     $mc_parent_link='<div class="dropdown"><a href="{url}">{title}</a>{dropdown}</div>';
     /*template for the dropdown menu*/
@@ -104,12 +104,12 @@ function mcReturnMainMenu(){
             /*put links html into $mc_dropdown_menu*/
             $__mc_dropdown_menu_filled=str_replace("{dropdown_links}",$_all_child_links,$mc_dropdown_menu);
             $__dropdown_menu.=str_replace(["{url}","{title}","{dropdown}"],[$_url,$_title,$__mc_dropdown_menu_filled],$mc_parent_link);
-            $main_menu.=$__dropdown_menu;
+            //$main_menu.=$__dropdown_menu;
          }else{
-             $main_menu.=str_replace(["{url}","{title}"],[$_url,$_title],$mc_regular_link);
+             $__dropdown_menu.=str_replace(["{url}","{title}"],[$_url,$_title],$mc_regular_link);
          }
     }
-    return $main_menu;
+    return $__dropdown_menu;
 }
 function mcReturnDropDownMenu($wp_menu){
     $mc_regular_link='<button class="dropdown-item" type="button" data-url="{url}">{title}</button>';
