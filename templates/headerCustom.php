@@ -60,46 +60,49 @@ foreach ( (array) $mc_menu_items as $key => $menu_item ) {
 */
 /*grab the Primary Menu in admin>dashboard>appearances>menus*/
 $mc_primary_menu=wp_nav_menu(array('menu'=>'Primary Menu','echo'=>false,'container_class'=>'main-nav-links'));
-$mc_regular_link='<button class="dropdown-item" type="button" data-url="{url}">{title}</button>';
-$mc_parent_link='<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
-$mc_child_link='<button class="dropdown-item sub-menu-item _{parent_id}" type="button" data-url="{url}">{title}</button>';
-$mc_child_links=array();
-$mc_dropdown_menu_content="";
+//$mc_primary_menu=wp_get_nav_menu_object("Primary Menu");
 /*grab the hamburger menu in admin>dashboard>appearances>menus*/
-$mc_menu_obj=wp_get_nav_menu_object( "hamburger" );
-$mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
-foreach ( (array) $mc_menu_items as $key => $menu_item ) {
-    $_child_links=array();
-    $id = $menu_item->ID;
-    $title = $menu_item->title;
-    $url = $menu_item->url;
-    $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
-    if(in_array($id,$mc_child_links)){
-        //skip. child links will be constructed below 
-        continue;
-    }
-    $children_links=returnCHildLinks($menu_item);
-    if(is_array($children_links)){
-        foreach($children_links as $chl){
-            if($chl != null){
-                array_push($_child_links,(string)$chl);
-                array_push($mc_child_links,(string)$chl);
+function mcReturnDropDownMenu($wp_menu){
+    $mc_regular_link='<button class="dropdown-item" type="button" data-url="{url}">{title}</button>';
+    $mc_parent_link='<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
+    $mc_child_link='<button class="dropdown-item sub-menu-item _{parent_id}" type="button" data-url="{url}">{title}</button>';
+    $mc_child_links=array();
+    $mc_menu_obj=wp_get_nav_menu_object( $wp_menu );
+    $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
+    foreach ( (array) $mc_menu_items as $key => $menu_item ) {
+        $_child_links=array();
+        $id = $menu_item->ID;
+        $title = $menu_item->title;
+        $url = $menu_item->url;
+        $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
+        if(in_array($id,$mc_child_links)){
+            //skip. child links will be constructed below 
+            continue;
+        }
+        $children_links=returnCHildLinks($menu_item,$wp_menu);
+        if(is_array($children_links)){
+            foreach($children_links as $chl){
+                if($chl != null){
+                    array_push($_child_links,(string)$chl);
+                    array_push($mc_child_links,(string)$chl);
+                }
             }
+            //parent link because it has child links. Add to dropdown_menu_content 
+            $mc_dropdown_menu_content.=str_replace(["{id}","{title}"],[$id,$title],$mc_parent_link);
+            //add child links to dropdown_menu_content
+            foreach($_child_links as $_cl){
+                $_cl_item=getLinkItem($_cl,$wp_menu);
+                $mc_dropdown_menu_content.=str_replace(["{parent_id}","{url}","{title}"],[$id,$_cl_item->url,$_cl_item->title],$mc_child_link);
+            }
+        }else{
+            //regular link because it has no children links. Add to dropdown_menu_content
+            $mc_dropdown_menu_content.=str_replace(["{url}","{title}"],[$url,$title],$mc_regular_link);
         }
-        //parent link because it has child links. Add to dropdown_menu_content 
-        $mc_dropdown_menu_content.=str_replace(["{id}","{title}"],[$id,$title],$mc_parent_link);
-        //add child links to dropdown_menu_content
-        foreach($_child_links as $_cl){
-            $_cl_item=getLinkItem($_cl);
-            $mc_dropdown_menu_content.=str_replace(["{parent_id}","{url}","{title}"],[$id,$_cl_item->url,$_cl_item->title],$mc_child_link);
-        }
-    }else{
-        //regular link because it has no children links. Add to dropdown_menu_content
-        $mc_dropdown_menu_content.=str_replace(["{url}","{title}"],[$url,$title],$mc_regular_link);
     }
+    return $mc_dropdown_menu_content;
 }
-function getLinkItem($_child_link){
-    $mc_menu_obj=wp_get_nav_menu_object( "hamburger" );
+function getLinkItem($_child_link,$wp_menu){
+    $mc_menu_obj=wp_get_nav_menu_object($wp_menu);
     $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
@@ -109,16 +112,14 @@ function getLinkItem($_child_link){
     }
     return null;
 }
-function returnCHildLinks($parent_menu_item){
+function returnCHildLinks($parent_menu_item,$wp_menu){
     $main_link=$parent_menu_item->ID;
     $_child_links=array();
     //iterate over $mc_menu_items and check for children
-    $mc_menu_obj=wp_get_nav_menu_object( "hamburger" );
+    $mc_menu_obj=wp_get_nav_menu_object($wp_menu);
     $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
-        $title = $menu_item->title;
-        $url = $menu_item->url;
         $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
         if($main_link==$parent){
             array_push($_child_links,$id);
@@ -129,6 +130,7 @@ function returnCHildLinks($parent_menu_item){
     }
     return null;
 }
+$mc_dropdown_menu_content=mcReturnDropDownMenu("hamburger");
 //LOGO
 $mc_logo_img = $mc_theme_dir . "/assets/img/LOGOS/prepare-socal-logo.png";
 
