@@ -192,6 +192,8 @@ function returnCHildLinks($parent_menu_item,$wp_menu){
     }
     return null;
 }
+/*grab the Utility Nav menu in admin>dashboard>appearances>menus*/
+$utility_links=mcReturnUtilityNav();
 /*grab the hamburger menu in admin>dashboard>appearances>menus*/
 $mc_dropdown_menu_content=mcReturnDropDownMenu("hamburger");
 $mc_primary_menu=mcReturnMainMenu();
