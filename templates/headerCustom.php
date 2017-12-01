@@ -58,12 +58,15 @@ foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $parent = $menu_item->menu_item_parent; //no parent if 0 (ID)
 }
 */
+/*grab the Primary Menu in admin>dashboard>appearances>menus*/
+$mc_primary_menu=wp_nav_menu(array('menu'=>'Primary Menu','echo'=>false,'container_class'=>'main-nav-links'));
 $mc_regular_link='<button class="dropdown-item" type="button" data-url="{url}">{title}</button>';
 $mc_parent_link='<button id="_{id}" class="dropdown-item has-child-links" type="button">{title} <span class="active-menu">&#9660;</span><span class="inactive-menu">&#9650;</span></button>';
-$mc_child_link='<button class="dropdown-item sub-menu-item _{parent_id}" type="button" onclick="goTo(\'{url}\')">{title}</button>';
+$mc_child_link='<button class="dropdown-item sub-menu-item _{parent_id}" type="button" data-url="{url}">{title}</button>';
 $mc_child_links=array();
 $mc_dropdown_menu_content="";
-$mc_menu_obj=wp_get_nav_menu_object( "307" );
+/*grab the hamburger menu in admin>dashboard>appearances>menus*/
+$mc_menu_obj=wp_get_nav_menu_object( "hamburger" );
 $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
 foreach ( (array) $mc_menu_items as $key => $menu_item ) {
     $_child_links=array();
@@ -96,7 +99,7 @@ foreach ( (array) $mc_menu_items as $key => $menu_item ) {
     }
 }
 function getLinkItem($_child_link){
-    $mc_menu_obj=wp_get_nav_menu_object( "349" );
+    $mc_menu_obj=wp_get_nav_menu_object( "hamburger" );
     $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
@@ -110,7 +113,7 @@ function returnCHildLinks($parent_menu_item){
     $main_link=$parent_menu_item->ID;
     $_child_links=array();
     //iterate over $mc_menu_items and check for children
-    $mc_menu_obj=wp_get_nav_menu_object( "349" );
+    $mc_menu_obj=wp_get_nav_menu_object( "hamburger" );
     $mc_menu_items = wp_get_nav_menu_items($mc_menu_obj->term_id);
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $id = $menu_item->ID;
@@ -208,13 +211,13 @@ $second_navbar_block_template = '<div id="second_navbar_container">
             </div>
     */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$mc_dropdown_menu_template='<div class="dropdown-menu"><span class="dropdown-triangle"></span>{dropdown_menu_content}</div>';
+$mc_dropdown_menu_template='<div class="dropdown-menu"><span class="dropdown-triangle">&#9650;</span>{dropdown_menu_content}</div>';
 /* PUT IT ALL TOGETHER */
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
 //$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
 $mc_header_template=$mc_bootstrap_stylesheet.'<header>{content}</header>';
-$second_navbar_replace=array("{logo_url}","{dropdown_menu}");
-$second_navbar_replace_with=array($mc_logo_img,$mc_dropdown_menu);
+$second_navbar_replace=array("{logo_url}","{main_navbar}","{dropdown_menu}");
+$second_navbar_replace_with=array($mc_logo_img,$mc_primary_menu,$mc_dropdown_menu);
 $second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block_template);
 $mc_header = str_replace("{content}",$first_nabvar_block_template.$second_navbar_block,$mc_header_template);
 echo $mc_header;

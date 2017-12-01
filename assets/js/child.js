@@ -8,6 +8,16 @@
 $(document).ready(function() {
     //GLOBAL HEADER DROPDOWN
     var pathname = window.location.pathname;
+    $("#menu-primary-menu li").on('mouseover',function(){
+        //show-hide sub-menu
+        if($(this).find('.sub-menu').length>0){
+            //console.log($(this).attr('id'));
+            $(this).find('.sub-menu').css("display","block");
+        }
+    });
+    $('.sub-menu').on('mouseout',function(){
+        $(this).css("display","none");
+    });
     $(".nav-link:last-child").on("click",function() {
         //show-hide dropdown
         $(".dropdown-menu").toggle();
