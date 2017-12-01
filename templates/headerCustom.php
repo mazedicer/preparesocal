@@ -66,13 +66,22 @@ function mcReturnMainMenu(){
     $mc_menu_items = wp_get_nav_menu_items($mc_primary_menu->term_id);
     $mc_child_links=array();
     $main_menu="";
-    $mc_regular_link='<a href="{url}">{title}</a>';
+    /*template for main navigation with links*/
+    $mc_parent_link='<div class="dropdown"><a href="{url}">{title}</a>{dropdown}</div>';
+    /*template for the dropdown menu*/
+    $mc_dropdown_menu='<div class="dropdown-menu"><span class="dropdown-triangle">&#9650;</span>{dropdown_links}</div>';
+    /*template for main navigation with NO links*/
+    $mc_regular_link='<div class="dropdown"><a href="{url}">{title}</a></div>';
+    /*template for sub links inside the dropdown*/
+    $mc_sub_link='<a class="dropdown-item" href="{url}">{title}</a>';
+    
     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
         $_child_links=array();
-        $id = $menu_item->ID;
-        $title = $menu_item->title;
-        $url = $menu_item->url;
-         if(in_array($id,$mc_child_links)){
+        $_all_child_links='';
+        $_id = $menu_item->ID;
+        $_title = $menu_item->title;
+        $_url = $menu_item->url;
+         if(in_array($_id,$mc_child_links)){
             //skip. child links will be constructed below 
             continue;
         }
@@ -84,9 +93,20 @@ function mcReturnMainMenu(){
                     array_push($mc_child_links,(string)$chl);
                 }
             }
-            $main_menu.=str_replace(["{url}","{title}"],[$url,$title],$mc_regular_link);
+            //mc_regular_link because it is at 1st level
+            //$main_menu.=str_replace(["{url}","{title}"],[$_url,$_title],$mc_regular_link);
+            //add child links to dropdown_menu_content
+            foreach($_child_links as $__cl){
+                $___cl_item=getLinkItem($__cl,"Primary Menu");
+                /*gather up links*/
+                $_all_child_links.=str_replace(["{url}","{title}"],[$___cl_item->url,$___cl_item->title],$mc_sub_link);
+            }
+            /*put links html into $mc_dropdown_menu*/
+            $__mc_dropdown_menu_filled=str_replace("{dropdown_links}",$_all_child_links,$mc_dropdown_menu);
+            $__dropdown_menu.=str_replace(["{url}","{title}","{dropdown}"],[$_url,$_title,$__mc_dropdown_menu_filled],$mc_parent_link);
+            $main_menu.=$__dropdown_menu;
          }else{
-             $main_menu.=str_replace(["{url}","{title}"],[$url,$title],$mc_regular_link);
+             $main_menu.=str_replace(["{url}","{title}"],[$_url,$_title],$mc_regular_link);
          }
     }
     return $main_menu;
@@ -248,7 +268,7 @@ $second_navbar_block_template = '<div id="second_navbar_container">
             </div>
     */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$mc_dropdown_menu_template='<div class="dropdown-menu"><span class="dropdown-triangle">&#9650;</span>{dropdown_menu_content}</div>';
+$mc_dropdown_menu_template='<div class="dropdown-menu-ham"><span class="dropdown-triangle">&#9650;</span>{dropdown_menu_content}</div>';
 /* PUT IT ALL TOGETHER */
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
 //$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
