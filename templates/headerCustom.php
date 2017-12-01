@@ -61,6 +61,19 @@ foreach ( (array) $mc_menu_items as $key => $menu_item ) {
 /*grab the Primary Menu in admin>dashboard>appearances>menus*/
 //$mc_primary_menu=wp_nav_menu(array('menu'=>'Primary Menu','echo'=>false,'container_class'=>'main-nav-links'));
 //$mc_primary_menu=wp_get_nav_menu_object("Primary Menu");
+function mcReturnUtilityNav(){
+    $mc_primary_menu=wp_get_nav_menu_object("Utility Nav");
+    $mc_menu_items = wp_get_nav_menu_items($mc_primary_menu->term_id);
+    $mc_link='<li class="nav-item"><a class="nav-link" href="{url}">{title}</a></li>';
+    $utility_links='';
+     foreach ( (array) $mc_menu_items as $key => $menu_item ) {
+        $_id = $menu_item->ID;
+        $_title = $menu_item->title;
+        $_url = $menu_item->url;
+        $utility_links.=str_replace(["{url}","{title}"],[$_url,$_title],$mc_link);
+     }
+     return $utility_links;
+}
 function mcReturnMainMenu(){
     $mc_primary_menu=wp_get_nav_menu_object("Primary Menu");
     $mc_menu_items = wp_get_nav_menu_items($mc_primary_menu->term_id);
@@ -197,7 +210,7 @@ $mc_bootstrap_stylesheet ='';// '<link rel="stylesheet" href="https://maxcdn.boo
 /************************************************************************************************************************
 UTILITIES NAVBAR BLOCK
 ***********************************************************************************************************************/
-$first_nabvar_block_template = '<div id="first_navbar_container">
+/*$first_nabvar_block_template = '<div id="first_navbar_container">
                                                     <div id="nav_container">
                                                         <ul class="nav justify-content-end">
                                                             <li class="nav-item">
@@ -209,6 +222,13 @@ $first_nabvar_block_template = '<div id="first_navbar_container">
                                                             <li class="nav-item">
                                                                 <a class="nav-link" href="#">Espa&#241;ol</a>
                                                             </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>';*/
+$first_nabvar_block_template = '<div id="first_navbar_container">
+                                                    <div id="nav_container">
+                                                        <ul class="nav justify-content-end">
+                                                            {utility_links}
                                                         </ul>
                                                     </div>
                                                 </div>';
@@ -270,13 +290,14 @@ $second_navbar_block_template = '<div id="second_navbar_container">
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $mc_dropdown_menu_template='<div class="dropdown-menu-ham"><span class="dropdown-triangle">&#9650;</span>{dropdown_menu_content}</div>';
 /* PUT IT ALL TOGETHER */
+$utility_navbar=str_replace("{utility_links}",$utility_links,$first_nabvar_block_template);
 $mc_dropdown_menu=str_replace("{dropdown_menu_content}",$mc_dropdown_menu_content,$mc_dropdown_menu_template);
 //$mc_scripts_in=str_replace("{script_url}",$mc_header_custom_script_url,$mc_script1);
 $mc_header_template=$mc_bootstrap_stylesheet.'<header>{content}</header>';
 $second_navbar_replace=array("{logo_url}","{main_navbar}","{dropdown_menu}");
 $second_navbar_replace_with=array($mc_logo_img,$mc_primary_menu,$mc_dropdown_menu);
 $second_navbar_block = str_replace($second_navbar_replace,$second_navbar_replace_with,$second_navbar_block_template);
-$mc_header = str_replace("{content}",$first_nabvar_block_template.$second_navbar_block,$mc_header_template);
+$mc_header = str_replace("{content}",$utility_navbar.$second_navbar_block,$mc_header_template);
 echo $mc_header;
 // quick edit blocks 
 //$mc_block1=file_get_contents($mc_theme_dir."/templates/block1.php");

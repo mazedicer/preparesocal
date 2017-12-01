@@ -114,7 +114,7 @@ header #first_navbar_container {
     background:#f4f4f4;
 }
 header #first_navbar_container #nav_container {
-    width: 250px;
+    min-width: 250px;
     height:40px;
     display: flex;
     justify-content: center;
@@ -122,6 +122,7 @@ header #first_navbar_container #nav_container {
     position:absolute;
     background:#f4f4f4;
     border-radius: 0px 0px 0px 20px;
+    padding-left:10px;
 }
 header #first_navbar_container #nav_container > ul {
     display:flex;
